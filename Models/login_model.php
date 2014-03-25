@@ -10,7 +10,7 @@ class login_model extends Model {
 	
 	function run(){
 		$stm = $this -> db -> prepare("select user_id from user where 
-		user_email=:login and user_pass_hash=:password");
+		user_email=:login and user_pass_hash=:password and user_level_id=0");
 		$stm -> execute(array(':login' => $_POST['login'], ':password' => $_POST['password']));
 		// $data = $stm->fetchAll();
 		// print_r($data);

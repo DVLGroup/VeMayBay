@@ -1,3 +1,3 @@
 <?php
 
-define('URL', 'http://localhost:8079/VeMayBay/');
+define('URL', 'http://localhost/VeMayBay/');
