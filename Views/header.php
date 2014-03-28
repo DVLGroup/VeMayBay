@@ -55,7 +55,7 @@
 								$logged = Session::get('loggedIn');
 									if ($logged == false) {
 										Session::destroy();
-										header('location:' . URL . 'login');
+										//header('location:' . URL . 'login');
 										exit ;
 									}
 								}

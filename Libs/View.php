@@ -12,9 +12,9 @@ class View {
 		if ($noInclude == TRUE) {
 			require 'Views/' . $name . '.php';
 		} else {
-			require 'Views/header_admin.php';
+			require 'Views/header.php';
 			require 'Views/' . $name . '.php';
-			require 'Views/footer_admin.php';
+			require 'Views/footer.php';
 		}
 
 	}
