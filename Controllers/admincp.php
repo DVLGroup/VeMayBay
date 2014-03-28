@@ -10,7 +10,7 @@ class Admincp extends Controller {
 	}
 
 	function index() {
-		$this -> view -> render('admincp/index');
+		$this->view->render_admin('index');
 	}
 
 }
