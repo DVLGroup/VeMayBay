@@ -11,7 +11,7 @@ class Index_admin extends Controller {
 
 	function index() {
 		// header('location:../login');
-		$this -> view -> render('index_admin/index');
+		$this->view->render('index_admin/index');
 	}
 
 	function logout() {

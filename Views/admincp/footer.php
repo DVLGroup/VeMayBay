@@ -1,1 +1,7 @@
-Day la Footer
+	
+        
+        <footer>
+        	
+        </footer>
+    </body>
+</html>
