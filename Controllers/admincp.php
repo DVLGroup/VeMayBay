@@ -33,4 +33,12 @@ class Admincp extends Controller {
 		$this->view->render_admin('yeucau/index');
 	}
 
+	/////////////////////////////
+	function login() {
+		$this->model->login();
+	}
+
+	function logout() {
+		$this->model->logout();
+	}
 }

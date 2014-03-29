@@ -27,6 +27,7 @@
 
         <!-- Extends -->
         <link rel="stylesheet" href="<?php echo URL ?>public/css/admincp/admin.login.css" type="text/css"  />
+    
     </head>
 
     <body>
@@ -42,7 +43,7 @@
 		                    </div>
 		                    <div class="panel-body">
 		                        <div class="panel-inner">
-		                            <form role="form" action="admincp/login" method="POST">
+		                            <form role="form" action="<?php echo URL ?>admincp/login" method="POST" class='admin-login-form'>
 		                                <fieldset>
 		                                    <div class="form-group">
 		                                        <label for="admin-email">Email:</label>

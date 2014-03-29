@@ -43,7 +43,9 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="nav navbar-brand" href="<?php echo URL ?>">Bay Online</a>
+                        <a class="nav navbar-brand" href="<?php echo URL ?>">
+                            <i class="glyphicon glyphicon-home"></i> Bay Online
+                        </a>
                     </div>
                     <nav class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
@@ -58,6 +60,11 @@
                             </li>
                             <li >
                                 <a href="<?php echo URL ?>admincp/yeucau">Yêu Cầu</a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="nav">
+                                <a href="logout"><i class="glyphicon glyphicon-off"></i> Thoát</a>
                             </li>
                         </ul>
                     </nav>
