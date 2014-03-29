@@ -38,5 +38,15 @@
 			exit;
 		}
 
+		/////////////////////////////
+		function showListYeuCau(){
+			$sql = "SELECT * FROM yeu_cau";
+			$sth = $this->db->prepare($sql);
+			$sth->execute();
+
+			$data = $sth->fetchAll();
+			echo json_encode($data);
+		}
+
 		
 	}

@@ -1,3 +1,12 @@
+<?php
+
+    Session::init();
+    $isAdmin = Session::get('Admin');
+    if(!$isAdmin)
+    {
+        header('location:' . URL .'admincp');
+    } 
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,11 +29,13 @@
         <!-- Chèn link CSS -->
         <link rel="stylesheet" href="<?php echo URL ?>public/css/bootstrap.min.css" type="text/css"  />
         <link rel="stylesheet" href="<?php echo URL ?>public/css/admincp/wbbtheme.css"/>
+        <link rel="stylesheet" href="<?php echo URL ?>public/css/admincp/jquery.Tables.css"/>
 
         <!-- Chèn link JavaScript-->
         <script src="<?php echo URL ?>public/js/jquery.min.js" type="text/javascript"></script>
         <script src="<?php echo URL ?>public/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="<?php echo URL ?>public/js/admincp/jquery.wysibb.min.js"></script>
+        <script src="<?php echo URL ?>public/js/admincp/jquery.wysibb.min.js" type="text/javascript"></script>
+        <script src="<?php echo URL?>public/js/admincp/jquery.dataTables.js" type="text/javascript"></script>
         <script>
             $(document).ready(function() {
                 $("#editor").wysibb();
@@ -53,10 +64,10 @@
                                 <a href="<?php echo URL ?>admincp/vemaybay">Vé Máy Bay</a>
                             </li>
                             <li >
-                                <a href="<?php echo URL ?>admincp/diadiem">Địa Điểm</a>
+                                <a href="<?php echo URL ?>admincp/diadiem">Đặt vé</a>
                             </li>
                             <li >
-                                <a href="<?php echo URL ?>admincp/hangmaybay">Hãng</a>
+                                <a href="<?php echo URL ?>admincp/hangmaybay">User</a>
                             </li>
                             <li >
                                 <a href="<?php echo URL ?>admincp/yeucau">Yêu Cầu</a>

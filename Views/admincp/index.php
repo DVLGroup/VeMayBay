@@ -1,3 +1,9 @@
+<?php
+	if(Session::get('Admin')){
+		header('location:'.URL.'admincp/dashboard');
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>

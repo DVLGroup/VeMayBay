@@ -25,11 +25,9 @@ class Admincp extends Controller {
 		$this->view->render_admin('diadiem/index');
 	}
 
-	function hangmaybay() {
-		$this->view->render_admin('hangmaybay/index');
-	}
-
 	function yeucau() {
+		$this->view->js = URL . 'Views/admincp/yeucau/yeucau.js';
+		$this->model->showListYeuCau();
 		$this->view->render_admin('yeucau/index');
 	}
 
