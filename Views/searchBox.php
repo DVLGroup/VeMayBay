@@ -65,5 +65,7 @@
 		</form>
 	</div>
 	
-	<div class="col-sm-6 well" style="border-radius: 0px"></div>
+	<div class="col-sm-6 well" style="border-radius: 0px">
+		
+	</div>
 </div>

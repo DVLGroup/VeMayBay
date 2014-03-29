@@ -34,7 +34,6 @@
 body {
   position: relative; /* For scrollyspy */
   /*padding-top: 50px; /* Account for fixed navbar */*/
-  padding-bottom: 200px;
 }
 
 /* Keep code small in tables on account of limited space */
