@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<title>Quản Lý</title>
+		<title>Bay Online</title>
 		<link rel="stylesheet" href="<?php echo URL; ?>Public/css/default.css" />
 
 		<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>Public/css/bootstrap.css" />
@@ -31,36 +31,23 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="nav navbar-brand" href="<?php echo URL; ?>index_admin">Bay Online</a>
+					<a class="nav navbar-brand" href="<?php echo URL; ?>index">Bay Online</a>
 				</div>
 				<nav class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
 						<li <?php echoActiveClassIfRequestMatches('vemaybay')?>>
-							<a href="<?php echo URL; ?>vemaybay">Vé Máy Bay</a>
+							<a href="<?php echo URL; ?>vemaybay">Yêu Cầu Săn Vé</a>
 						</li>
 						<li <?php echoActiveClassIfRequestMatches('diadiem')?>>
-							<a href="<?php echo URL; ?>diadiem">Địa Điểm</a>
+							<a href="<?php echo URL; ?>diadiem">Thanh Toán</a>
 						</li>
 						<li <?php echoActiveClassIfRequestMatches('hangmaybay')?>>
-							<a href="<?php echo URL; ?>hangmaybay">Hãng</a>
+							<a href="<?php echo URL; ?>hangmaybay">Liên Hệ</a>
 						</li>
 						<li <?php echoActiveClassIfRequestMatches('yeucau')?>>
-							<a href="<?php echo URL; ?>yeucau">Yêu Cầu</a>
+							<a href="<?php echo URL; ?>yeucau">Giới Thiệu</a>
 						</li>
-						<li>
-							<?php if(Session::get('loggedIn')==TRUE){
-							?>
-							<a href="<?php echo URL; ?>index_admin/logout">Đăng Xuất</a>
-							<?php } else{
-								$logged = Session::get('loggedIn');
-									if ($logged == false) {
-										Session::destroy();
-										//header('location:' . URL . 'login');
-										exit ;
-									}
-								}
-							?>
-						</li>
+						
 					</ul>
 				</nav>
 			</div>
