@@ -10,9 +10,12 @@ class View {
 
 	public function render($name, $noInclude = false) {
 		if ($noInclude == TRUE) {
+			require 'Views/header.php';
 			require 'Views/' . $name . '.php';
+			require 'Views/footer.php';
 		} else {
 			require 'Views/header.php';
+			require 'Views/searchBox.php';
 			require 'Views/' . $name . '.php';
 			require 'Views/footer.php';
 		}
