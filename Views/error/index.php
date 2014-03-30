@@ -1,2 +1,2 @@
-<hr />
+<hr class="alert-info" />
 This Page Does not Exist...

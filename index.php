@@ -20,8 +20,10 @@
 
   	// $facebook = new Facebook($config);
 
+  	$facebook = new Facebook($config);
+  	
 	$app = new Bootstrap();
 	
-	$facebook = new Facebook($config);
+	
 
 	

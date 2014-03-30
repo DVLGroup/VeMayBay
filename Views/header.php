@@ -6,11 +6,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 		<meta name="viewport" content="width=device-width">
 		<title>Bay Online</title>
-		<link rel="stylesheet" href="<?php echo URL; ?>Public/css/default.css" />
+		<link rel="stylesheet" href="<?php echo URL; ?>public/css/default.css" />
 
-		<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>Public/css/bootstrap.css" />
-		<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>Public/css/bootstrap-theme.css" />
-		<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>Public/css/docs.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>public/css/bootstrap.css" />
+		<!-- <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>public/css/bootstrap-theme.css" /> -->
+		<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>public/css/docs.css" />
 
 		<script type="text/javascript" src="<?php echo URL; ?>public/js/jquery.js"></script>
 		<script type="text/javascript" src="<?php echo URL; ?>public/js/custom.js"></script>
@@ -34,7 +34,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="nav navbar-brand" href="<?php echo URL; ?>index">Bay Online</a>
+					<a class="nav navbar-brand" href="<?php echo URL; ?>index"><span class="glyphicon glyphicon-plane"></span> Bay Online</a>
 				</div>
 				<nav class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">

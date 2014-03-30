@@ -1,3 +1,4 @@
+			<hr class="alert-info" />
 		</div>
 	</body>
 	<footer class="navbar navbar-inverse navbar-fixed-bottom bs-docs-nav">

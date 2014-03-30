@@ -1,10 +1,15 @@
 body {
-	background: silver;
+	background: url(../images/bodybg.gif);
+	background-position: right top;
 }
 
 #header {
 	padding: 20px;
 	background: gold;
+}
+
+button,input,select{
+	border-radius: 0px !important;
 }
 
 #content {
