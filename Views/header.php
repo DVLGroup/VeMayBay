@@ -2,6 +2,9 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
+		<meta content="True" name="HandheldFriendly">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="viewport" content="width=device-width">
 		<title>Bay Online</title>
 		<link rel="stylesheet" href="<?php echo URL; ?>Public/css/default.css" />
 
