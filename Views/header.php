@@ -41,11 +41,11 @@
 						<li <?php echoActiveClassIfRequestMatches('yeucau')?>>
 							<a href="<?php echo URL; ?>yeucau">Yêu Cầu Săn Vé</a>
 						</li>
-						<li <?php echoActiveClassIfRequestMatches('diadiem')?>>
-							<a href="<?php echo URL; ?>diadiem">Thanh Toán</a>
+						<li <?php echoActiveClassIfRequestMatches('thanhtoan')?>>
+							<a href="<?php echo URL; ?>thanhtoan">Thanh Toán</a>
 						</li>
-						<li <?php echoActiveClassIfRequestMatches('hangmaybay')?>>
-							<a href="<?php echo URL; ?>hangmaybay">Liên Hệ</a>
+						<li <?php echoActiveClassIfRequestMatches('lienhe')?>>
+							<a href="<?php echo URL; ?>lienhe">Liên Hệ</a>
 						</li>
 						<li <?php echoActiveClassIfRequestMatches('gioithieu')?>>
 							<a href="<?php echo URL; ?>gioithieu">Giới Thiệu</a>
@@ -56,4 +56,4 @@
 			</div>
 		</div>
 		<div class="container bs-docs-container">
-
+			
