@@ -41,6 +41,11 @@
                 $("#editor").wysibb();
             })
         </script>
+        <?php
+            if(isset($this->js)){
+                echo '<script type="text/javascript" src="'. $this->js .'"></script>';
+            }
+        ?>
     </head>
 
     <body>

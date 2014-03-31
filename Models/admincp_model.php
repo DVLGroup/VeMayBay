@@ -40,14 +40,9 @@
 
 		/////////////////////////////
 		function showListYeuCau(){
-			$sql = "SELECT * FROM yeu_cau";
-			$sth = $this->db->prepare($sql);
-			$sth->setFetchMode(PDO::FETCH_ASSOC);
-			$sth->execute();
-
-			$data = $sth->fetchAll();
-			print_r($data);
-			//echo json_encode($data);
+			$result = $this->db->select("SELECT * FROM yeu_cau");
+			//print_r($result);
+			echo json_encode($result);
 		}
 
 		

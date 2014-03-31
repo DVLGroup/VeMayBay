@@ -26,9 +26,9 @@ class Admincp extends Controller {
 	}
 
 	function yeucau() {
-		$this->view->js = URL . 'Views/admincp/yeucau/yeucau.js';
-		$this->model->showListYeuCau();
+		$this->view->js = URL . 'Views/admincp/yeucau/js/default.js';
 		$this->view->render_admin('yeucau/index');
+		$this->model->showListYeuCau();
 	}
 
 	/////////////////////////////

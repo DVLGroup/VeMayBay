@@ -1,11 +1,11 @@
 $(function(){
-	$.get('yeucau', function(rs){
+	$.get('admincp/yeucau', function(rs){
 		alert(1);
 		console.log(rs);
 		for(var i=0; i < 10; i++){
 			$('#listYeuCau').append('<tr>');
 			for(var j=0; j < rs.length; j++){
-				$('#listYeuCau').append('<td>abc</td>');
+				$('#listYeuCau').append('<td>'+ rs['yeu_cau_id'] +'</td>');
 			}
 			$('#listYeuCau').append('</tr>');
 		}

@@ -3,12 +3,6 @@
     	$('#table_yeucau').dataTable( );
 	} );
 </script>
-<?php
-	if(isset($this->js)){
-		echo '<script type="text/javascript" src="'. $this->js .'"></script>';
-	}
-?>
-
 		<div class="container" style="margin-top: 50px">
 			<table class="table table-bordered table-hover" id="table_yeucau" class="display">
 			    <thead>
