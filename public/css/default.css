@@ -8,8 +8,16 @@ body {
 	background: gold;
 }
 
-button,input,select{
+button,input,select,div{
 	border-radius: 0px !important;
+}
+
+.text-orange{
+	color: #F5740A;
+}
+
+.text-yellow{
+	color: #EEBD39;
 }
 
 #content {

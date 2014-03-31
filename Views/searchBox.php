@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-sm-12">
 		<div class="row">
-			<div class="col-sm-6 text-center well" style="border-radius: 0px;">
+			<div class="col-sm-6 text-center well" style="">
 				<form class="form-horizontal" action="">
 					<div class="form-group">
 						<h3 class="col-sm-12 text-info"><strong> Tìm Giá Vé Tại Đây </strong></h3>

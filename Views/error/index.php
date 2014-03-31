@@ -1,2 +1,2 @@
 <hr class="alert-info" />
-This Page Does not Exist...
+<strong class="text-danger">This Page Does not Exist...</strong>
