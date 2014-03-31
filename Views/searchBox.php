@@ -25,7 +25,7 @@
 					<div class="form-group">
 						<div class="col-sm-8">
 							<select name="origin" class="form-control">
-								<option value="Hồ Chí Minh">Hồ Chí Minh</option>
+								<option value="HoChiMinh">Hồ Chí Minh</option>
 							</select>
 						</div>
 						<div class="col-sm-4">
@@ -35,7 +35,7 @@
 					<div class="form-group">
 						<div class="col-sm-8">
 							<select name="destination" class="form-control">
-								<option value="Hà Nội">Hà Nội</option>
+								<option value="HaNoi">Hà Nội</option>
 							</select>
 						</div>
 						<div class="col-sm-4">
@@ -57,7 +57,7 @@
 							</select>
 						</div>
 						<div class="col-sm-4">
-							Sơ Sinh(0-2)
+							Sơ sinh(0-2)
 							<select name="treSoSinh" class="form-control">
 								<option value="1" >1</option>
 							</select>

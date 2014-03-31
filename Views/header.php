@@ -38,8 +38,8 @@
 				</div>
 				<nav class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
-						<li <?php echoActiveClassIfRequestMatches('vemaybay')?>>
-							<a href="<?php echo URL; ?>vemaybay">Yêu Cầu Săn Vé</a>
+						<li <?php echoActiveClassIfRequestMatches('yeucau')?>>
+							<a href="<?php echo URL; ?>yeucau">Yêu Cầu Săn Vé</a>
 						</li>
 						<li <?php echoActiveClassIfRequestMatches('diadiem')?>>
 							<a href="<?php echo URL; ?>diadiem">Thanh Toán</a>
@@ -47,8 +47,8 @@
 						<li <?php echoActiveClassIfRequestMatches('hangmaybay')?>>
 							<a href="<?php echo URL; ?>hangmaybay">Liên Hệ</a>
 						</li>
-						<li <?php echoActiveClassIfRequestMatches('yeucau')?>>
-							<a href="<?php echo URL; ?>yeucau">Giới Thiệu</a>
+						<li <?php echoActiveClassIfRequestMatches('gioithieu')?>>
+							<a href="<?php echo URL; ?>gioithieu">Giới Thiệu</a>
 						</li>
 						
 					</ul>
