@@ -1,5 +1,10 @@
 <?php
-
+	
+	/*
+	*
+	*
+	*
+	*/
 	class Hash {
 		public static function create($algo, $data , $salt){
 			$context = hash_init($algo, HASH_HMAC, $salt);
