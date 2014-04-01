@@ -5,7 +5,8 @@
 		<hr class="alert-info" />
 		<div class="row">
 			<div class="col-sm-4">
-				<h4><i class="fa fa-mobile-phone fa-2x"></i> 0903 676 222</h4>
+				<h4><i class="fa fa-mobile-phone fa-2x"></i> 098 884 90 96(Gặp Lợi)</h4>
+				<h4><i class="fa fa-mobile-phone fa-2x"></i> 090 367 62 22(Gặp Việt)</h4>
 				<h4><a href="http://www.facebook.com/baytructuyen/"><i class="fa fa-facebook fa-2x"></i> /baytructuyen</a></h4>
 			</div>
 			<div class="col-sm-4">
