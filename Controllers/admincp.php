@@ -17,12 +17,16 @@ class Admincp extends Controller {
 		$this->view->render_admin('dashboard/index');
 	}
 
+	function datve() {
+		$this->view->render_admin('datve/index');
+	}
+
 	function vemaybay() {
 		$this->view->render_admin('vemaybay/index');
 	}
 
-	function diadiem() {
-		$this->view->render_admin('diadiem/index');
+	function user() {
+		$this->view->render_admin('user/index');
 	}
 
 	function yeucau() {

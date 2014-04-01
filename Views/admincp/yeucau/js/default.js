@@ -1,5 +1,5 @@
 $(function(){
-	$.get('admincp/yeucau', function(rs){
+	$.get('yeucau', function(rs){
 		alert(1);
 		console.log(rs);
 		for(var i=0; i < 10; i++){

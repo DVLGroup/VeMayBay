@@ -1,5 +1,4 @@
 <?php
-
     Session::init();
     $isAdmin = Session::get('Admin');
     if(!$isAdmin)
@@ -35,7 +34,7 @@
         <script src="<?php echo URL ?>public/js/jquery.min.js" type="text/javascript"></script>
         <script src="<?php echo URL ?>public/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="<?php echo URL ?>public/js/admincp/jquery.wysibb.min.js" type="text/javascript"></script>
-        <script src="<?php echo URL?>public/js/admincp/jquery.dataTables.js" type="text/javascript"></script>
+        <script src="<?php echo URL ?>public/js/admincp/jquery.dataTables.js" type="text/javascript"></script>
         <script>
             $(document).ready(function() {
                 $("#editor").wysibb();
@@ -69,13 +68,13 @@
                                 <a href="<?php echo URL ?>admincp/vemaybay">Vé Máy Bay</a>
                             </li>
                             <li >
-                                <a href="<?php echo URL ?>admincp/diadiem">Đặt vé</a>
-                            </li>
-                            <li >
-                                <a href="<?php echo URL ?>admincp/hangmaybay">User</a>
+                                <a href="<?php echo URL ?>admincp/datve">Đặt vé</a>
                             </li>
                             <li >
                                 <a href="<?php echo URL ?>admincp/yeucau">Yêu Cầu</a>
+                            </li>
+                            <li >
+                                <a href="<?php echo URL ?>admincp/user">User</a>
                             </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">

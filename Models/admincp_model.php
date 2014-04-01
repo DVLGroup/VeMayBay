@@ -6,18 +6,17 @@
 		}
 
 		function login(){
-			$user_email = $_POST['user_email'];
-			$user_password = $_POST['user_password'];
-			$sql = "SELECT user_id FROM user WHERE user_email = :user_email AND user_password = :user_password";
-			$sth = $this->db->prepare($sql);
-			$sth->execute(array(
-				':user_email' => $user_email,
-				':user_password' => Hash::create('md5', $user_password, HASH_KEY)
-				)
-			);
 
+			$sql = "SELECT user_id FROM user WHERE user_email = :user_email AND user_password = :user_password";
+
+			$user = array(
+					':user_email' => $_POST['user_email'],
+					':user_password' => Hash::create('md5', $_POST['user_password'], HASH_KEY)
+				);
+
+			$sth = $this->db->prepare($sql);
+			$sth->execute($user);
 			$count = $sth->rowCount();
-			echo $count;
 
 			if($count > 0){
 				Session::init();

@@ -26,5 +26,25 @@ class Database extends PDO {
 		return $sth->fetchAll($fetchMode);
 	}
 
-
+	/**
+	 * insert
+	 * @param string $table A name of table to insert into
+	 * @param string $data An associative array
+	 * Vi du: insert('user', array('user_name'=>'admin', 'user_password'=>'1234'))
+	 */
+	public function insert($table, $data)
+	{
+		ksort($data);
+		
+		$fieldNames = implode('`, `', array_keys($data));
+		$fieldValues = ':' . implode(', :', array_keys($data));
+		
+		$sth = $this->prepare("INSERT INTO $table (`$fieldNames`) VALUES ($fieldValues)");
+		
+		foreach ($data as $key => $value) {
+			$sth->bindValue(":$key", $value);
+		}
+		
+		$sth->execute();
+	}
 }

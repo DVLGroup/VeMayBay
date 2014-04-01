@@ -1,4 +1,3 @@
 <?php
-
-define('URL', '//localhost/VeMayBay/');
+define('URL', '//localhost/Vemaybay/');
 define('LIBS', 'Libs/');
