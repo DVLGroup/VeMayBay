@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-sm-offset-2 col-sm-8 col-sm-offset-2 well">
-		<h2 class="text-info"><strong>Yêu Cầu Săn Vé</strong></h2>
+		<h3 class="text-info"><strong>Yêu Cầu Săn Vé</strong></h3>
 		<hr class="alert-info" />
 		<form class="form-horizontal" action="" method="post">
 			<div class="form-group">

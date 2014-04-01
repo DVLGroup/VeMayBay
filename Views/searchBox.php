@@ -1,7 +1,7 @@
 <div class="row">
-	<div class="col-sm-12">
+	<div class="col-sm-12 well">
 		<div class="row">
-			<div class="col-sm-6 text-center well" style="">
+			<div class="col-sm-6 text-center" style="">
 				<form class="form-horizontal" action="">
 					<div class="form-group">
 						<h3 class="col-sm-12 text-info"><strong> Tìm Giá Vé Tại Đây </strong></h3>
@@ -71,7 +71,7 @@
 				</form>
 			</div>
 
-			<div class="col-sm-6 well" style="border-radius: 0px">
+			<div class="col-sm-6" style="border-radius: 0px">
 				<div id="carousel-slide" class="carousel slide" data-ride="carousel">
 					<ol class="carousel-indicators">
 						<li data-target="carousel-slide" data-slide-to="0" class="active"></li>

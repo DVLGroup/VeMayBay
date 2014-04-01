@@ -3,14 +3,14 @@
 /**
  *
  */
-class Error extends Controller {
+class lienhe extends Controller {
 
 	function __construct() {
 		parent::__construct();
 	}
 
 	function index() {
-		$this -> view -> render('error/index',true);
+		$this -> view -> render('lienhe/index');
 	}
 
 }

@@ -11,6 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>public/css/bootstrap.css" />
 		<!-- <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>public/css/bootstrap-theme.css" /> -->
 		<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>public/css/docs.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>public/css/fontawesome/css/font-awesome.css" />
 
 		<script type="text/javascript" src="<?php echo URL; ?>public/js/jquery.js"></script>
 		<script type="text/javascript" src="<?php echo URL; ?>public/js/custom.js"></script>
