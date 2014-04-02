@@ -12,5 +12,8 @@
 		function index() {
 			$this->view->render('yeucau/index');
 		}
-		
+		function send()
+		{
+			$this->model->send();
+		}
 	}

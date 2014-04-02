@@ -29,7 +29,7 @@
 							</select>
 						</div>
 						<div class="col-sm-4">
-							<input name="dateDi" class="form-control" type="datetime-local" />
+							<input name="dateDi" class="form-control" type="date" />
 						</div>
 					</div>
 					<div class="form-group">
@@ -39,7 +39,7 @@
 							</select>
 						</div>
 						<div class="col-sm-4">
-							<input name="dateVe" class="form-control" type="datetime-local" />
+							<input name="dateVe" class="form-control" type="date" />
 						</div>
 					</div>
 					<hr class="alert-info" />
@@ -80,19 +80,19 @@
 					</ol>
 					<div class="carousel-inner">
 						<div class="item active">
-							<img src="public/images/Vietjetair.jpg" alt="VietJetAir" style="width:100%;height: 386px" />
+							<img src="<?php echo URL; ?>public/images/Vietjetair.jpg" alt="VietJetAir" style="width:100%;height: 386px" />
 							<div class="carousel-caption">
 								<h2><strong>VietJetAir</strong></h2><h4> Tinh Tế, Nhiệt Tình...</h4>
 							</div>
 						</div>
 						<div class="item">
-							<img src="public/images/Vietnam_Airlines.jpg" alt="VNA" style="width:100%; height: 386px" />
+							<img src="<?php echo URL; ?>public/images/Vietnam_Airlines.jpg" alt="VNA" style="width:100%; height: 386px" />
 							<div class="carousel-caption">
 								<h2><strong>VietNam Airline</strong></h2><h4> An Toàn, Chất Lượng...</h4>
 							</div>
 						</div>
 						<div class="item">
-							<img src="public/images/Jetstar.jpg" alt="JetStar" style="width:100%; height: 386px" />
+							<img src="<?php echo URL; ?>public/images/Jetstar.jpg" alt="JetStar" style="width:100%; height: 386px" />
 							<div class="carousel-caption">
 								<h2><strong>JetStar</strong></h2><h4> Hợp Lý, Tận Tình...</h4>
 							</div>

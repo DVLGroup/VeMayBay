@@ -2,23 +2,23 @@
 	<div class="col-sm-offset-2 col-sm-8 col-sm-offset-2 well">
 		<h3 class="text-info"><strong>Yêu Cầu Săn Vé</strong></h3>
 		<hr class="alert-info" />
-		<form class="form-horizontal" action="" method="post">
+		<form class="form-horizontal" action="yeucau/send" method="post" id="management">
 			<div class="form-group">
 				<label class="col-sm-2 control-label">Họ tên(!)</label>
 				<div class="col-sm-6">
-					<input type="text" class="form-control" name="hoTen" />
+					<input type="text" class="form-control required" name="hoTen"/>
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="col-sm-2 control-label">Email</label>
+				<label class="col-sm-2 control-label">Email(!)</label>
 				<div class="col-sm-6">
-					<input type="text" class="form-control" name="email" />
+					<input type="text" class="form-control required email" name="email" />
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="col-sm-2 control-label">Điện thoại(!)</label>
 				<div class="col-sm-6">
-					<input type="text" class="form-control" name="dThoai" />
+					<input type="text" class="form-control required number" name="dThoai" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -29,11 +29,11 @@
 					</select>
 				</div>
 				<div class="col-sm-3">
-					<input type="datetime-local" name="ngayDi1" class="form-control" value="" />
+					<input type="date" name="ngayDi1" class="form-control" value="<?php echo date("Y-m-d");?>" />
 				</div>
 				<label class="col-sm-1 control-label">đến</label>
 				<div class="col-sm-3">
-					<input type="datetime-local" name="ngayDi2" class="form-control" value="" />
+					<input type="date" name="ngayDi2" class="form-control" value="<?php echo date("Y-m-d");?>" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -44,11 +44,11 @@
 					</select>
 				</div>
 				<div class="col-sm-3">
-					<input type="datetime-local" name="ngayVe1" class="form-control" value="" />
+					<input type="date" name="ngayVe1" class="form-control" value="<?php echo date("Y-m-d");?>" />
 				</div>
 				<label class="col-sm-1 control-label">đến</label>
 				<div class="col-sm-3">
-					<input type="datetime-local" name="ngayVe2" class="form-control" value="" />
+					<input type="date" name="ngayVe2" class="form-control" value="<?php echo date("Y-m-d");?>" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -63,7 +63,7 @@
 			<div class="form-group">
 				<label class="col-sm-2 control-label">Số lượng</label>
 				<div class="col-sm-6">
-					<select class="form-control" name="loaiVe">
+					<select class="form-control" name="soLuong">
 						<option value="1" selected="selected">1</option>
 						<option value="2">2</option>
 					</select>

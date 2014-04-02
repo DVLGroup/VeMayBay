@@ -1,3 +1,3 @@
 <?php
-define('URL', '//localhost/Vemaybay/');
+define('URL', '//'.$_SERVER['HTTP_HOST'].'/Vemaybay/');
 define('LIBS', 'Libs/');

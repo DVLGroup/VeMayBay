@@ -12,10 +12,27 @@
 		<!-- <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>public/css/bootstrap-theme.css" /> -->
 		<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>public/css/docs.css" />
 		<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>public/css/fontawesome/css/font-awesome.css" />
-
+		<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>public/datepicker/css/bootstrap-datetimepicker.min.css" />
+		
 		<script type="text/javascript" src="<?php echo URL; ?>public/js/jquery.js"></script>
 		<script type="text/javascript" src="<?php echo URL; ?>public/js/custom.js"></script>
 		<script type="text/javascript" src="<?php echo URL; ?>public/js/bootstrap.js"></script>
+		<script type="text/javascript" src="<?php echo URL; ?>public/js/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="<?php echo URL; ?>public/js/messages_vi.js"></script>
+		<script type="text/javascript" src="<?php echo URL; ?>public/datepicker/js/bootstrap-datetimepicker.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				$("#management").validate({
+					errorElement : "span", // Định dạng cho thẻ HTML hiện thông báo lỗi
+					rules : {
+						rePassword : {
+							equalTo : "#password" // So sánh trường repassword với trường có id là password
+						},
+					}
+				});
+
+			});
+		</script>
 	</head>
 	<body>
 		<?php
