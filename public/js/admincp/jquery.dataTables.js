@@ -9481,7 +9481,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "Search:",
+			"sSearch": "<i class='glyphicon glyphicon-search'></i> Search:",
 		
 		
 			/**

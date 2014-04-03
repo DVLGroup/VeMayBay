@@ -29,10 +29,14 @@ class Admincp extends Controller {
 		$this->view->render_admin('user/index');
 	}
 
-	function yeucau() {
+	function yeucau($xhrGetListings = false) {
 		$this->view->js = URL . 'Views/admincp/yeucau/js/default.js';
-		$this->view->render_admin('yeucau/index');
-		$this->model->showListYeuCau();
+		if($xhrGetListings == 'xhrGetListings'){
+			$this->model->showListYeuCau();
+		} else {
+			$this->view->render_admin('yeucau/index');
+		}
+		
 	}
 
 	/////////////////////////////

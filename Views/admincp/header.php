@@ -29,6 +29,7 @@
         <link rel="stylesheet" href="<?php echo URL ?>public/css/bootstrap.min.css" type="text/css"  />
         <link rel="stylesheet" href="<?php echo URL ?>public/css/admincp/wbbtheme.css"/>
         <link rel="stylesheet" href="<?php echo URL ?>public/css/admincp/jquery.Tables.css"/>
+        <link rel="stylesheet" href="<?php echo URL ?>public/css/admincp/style.css"/>
 
         <!-- Chèn link JavaScript-->
         <script src="<?php echo URL ?>public/js/jquery.min.js" type="text/javascript"></script>

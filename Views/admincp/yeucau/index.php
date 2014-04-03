@@ -1,12 +1,9 @@
-<script type="text/javascript">
-	$(document).ready( function () {
-    	$('#table_yeucau').dataTable( );
-	} );
-</script>
+
+
 		<div class="container" style="margin-top: 50px">
 			<table class="table table-bordered table-hover" id="table_yeucau" class="display">
 			    <thead>
-			        <tr class="danger">
+			        <tr class="info">
 			            <th>ID</th>
 			            <th>Họ tên</th>
 			            <th>Email</th>
