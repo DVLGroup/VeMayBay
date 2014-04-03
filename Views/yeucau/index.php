@@ -1,24 +1,40 @@
 <div class="row">
+	<?php
+	Session::init();
+	$check = Session::get('check');
+	if(isset($check) && $check==1){
+	?>
+	<script>
+		$(document).ready(function(){
+			$("#loading").fadeIn(800).delay(800).fadeOut(800);
+			$("#messageBox").delay(2400).fadeIn(600).delay(800).fadeOut(600);
+		});
+	</script>
+	
+	<?php
+	}
+	Session::destroy();
+	?>
 	<div class="col-sm-offset-2 col-sm-8 col-sm-offset-2 well">
 		<h3 class="text-info"><strong>Yêu Cầu Săn Vé</strong></h3>
 		<hr class="alert-info" />
-		<form class="form-horizontal" action="yeucau/send" method="post" id="management">
+		<form class="form-horizontal" action="<?php echo URL; ?>yeucau/send" method="post" id="management">
 			<div class="form-group">
-				<label class="col-sm-2 control-label">Họ tên(!)</label>
+				<label class="col-sm-2 control-label">Họ tên (!)</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control required" name="hoTen"/>
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="col-sm-2 control-label">Email(!)</label>
+				<label class="col-sm-2 control-label">Email (!)</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control required email" name="email" />
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="col-sm-2 control-label">Điện thoại(!)</label>
+				<label class="col-sm-2 control-label">Điện thoại (!)</label>
 				<div class="col-sm-6">
-					<input type="text" class="form-control required number" name="dThoai" />
+					<input type="text" minlength="9" class="form-control required number" name="dThoai" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -55,8 +71,8 @@
 				<label class="col-sm-2 control-label">Loại vé</label>
 				<div class="col-sm-6">
 					<select class="form-control" name="loaiVe">
-						<option value="0">Một chiều</option>
-						<option value="1" selected="selected">Khứ hồi</option>
+						<option value="1 chiều">Một chiều</option>
+						<option value="khứ hồi" selected="selected">Khứ hồi</option>
 					</select>
 				</div>
 			</div>

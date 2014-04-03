@@ -7,6 +7,10 @@
 				<img src="public/images/tai-sao-den-voi-vna.png" />
 			</div>
 			<div class="col-sm-6">
+				<br />
+				<br />
+				<br />
+				<br />
 				<p>
 					<strong>Công ty CP Đầu Tư VNA - BayTrucTuyen.com</strong> có kinh nghiệm nhiều năm trong các lĩnh
 					vực phần mềm điện tử - tư vấn tài chính – quỹ đầu tư các dự án.

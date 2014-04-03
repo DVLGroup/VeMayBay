@@ -21,12 +21,25 @@ class yeucau_model extends Model {
 		$data['ngay_di_2'] = $_POST['ngayDi2'];
 		$data['ngay_ve'] = $_POST['ngayVe1'];
 		$data['ngay_ve_2'] = $_POST['ngayVe2'];
-		$data['hang_bay'] = $_POST['hangBay1'].'/'.$_POST['hangBay2'].'/'.$_POST['hangBay3'];
+		$data['hang_bay'] = $_POST['hangBay1'];
+		if (isset($_POST['hangBay2'])) {
+			$data['hang_bay'] .= '/' . $_POST['hangBay2'];
+		}
+		if (isset($_POST['hangBay3'])) {
+			$data['hang_bay'] .= '/' . $_POST['hangBay3'];
+		}
+		$data['gui_qua_mail'] = null;
+		if(isset($_POST['quaMail']))
+		{
+			$data['gui_qua_mail'] = 1;
+		}
 		$table = 'yeu_cau';
 		// print_r($data);
-		$result = $this->db->insert($table, $data);
+		$result = $this -> db -> insert($table, $data);
 		//$result = $this->db->insert($table, $data);
-		header('Location:'.URL.'yeucau');
+		Session::init();
+		Session::set('check', 1);
+		header('Location:' . URL . 'yeucau');
 	}
 
 }

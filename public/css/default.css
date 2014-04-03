@@ -9,8 +9,8 @@ body {
 }
 
 .error{
-	color: red;
-	font-weight: bold;
+	color: #DB0000;
+	/*font-weight: bold;*/
 }
 
 a{

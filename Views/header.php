@@ -19,7 +19,6 @@
 		<script type="text/javascript" src="<?php echo URL; ?>public/js/bootstrap.js"></script>
 		<script type="text/javascript" src="<?php echo URL; ?>public/js/jquery.validate.min.js"></script>
 		<script type="text/javascript" src="<?php echo URL; ?>public/js/messages_vi.js"></script>
-		<script type="text/javascript" src="<?php echo URL; ?>public/datepicker/js/bootstrap-datetimepicker.min.js"></script>
 		<script>
 			$(document).ready(function() {
 				$("#management").validate({
