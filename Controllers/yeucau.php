@@ -7,6 +7,7 @@
 		
 		function __construct() {
 			parent::__construct();
+			$this->view->js = array('Views/yeucau/js/custom.js');
 		}
 		
 		function index() {

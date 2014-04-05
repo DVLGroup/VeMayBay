@@ -3,14 +3,13 @@
 	Session::init();
 	$check = Session::get('check');
 	if(isset($check) && $check==1){
+
+
 	?>
 	<script>
-		$(document).ready(function(){
-			$("#loading").fadeIn(800).delay(800).fadeOut(800);
-			$("#messageBox").delay(2400).fadeIn(600).delay(800).fadeOut(600);
-		});
+		raiseMsg();
 	</script>
-	
+
 	<?php
 	}
 	Session::destroy();
@@ -45,11 +44,11 @@
 					</select>
 				</div>
 				<div class="col-sm-3">
-					<input type="date" name="ngayDi1" class="form-control" value="<?php echo date("Y-m-d");?>" />
+					<input type="date" name="ngayDi1" id="ngayDi1" class="form-control" value="<?php echo date("Y-m-d"); ?>" />
 				</div>
 				<label class="col-sm-1 control-label">đến</label>
 				<div class="col-sm-3">
-					<input type="date" name="ngayDi2" class="form-control" value="<?php echo date("Y-m-d");?>" />
+					<input type="date" name="ngayDi2" id="ngayDi2" class="form-control" value="<?php echo date("Y-m-d"); ?>" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -60,11 +59,11 @@
 					</select>
 				</div>
 				<div class="col-sm-3">
-					<input type="date" name="ngayVe1" class="form-control" value="<?php echo date("Y-m-d");?>" />
+					<input type="date" name="ngayVe1" id="ngayVe1" class="form-control" value="<?php echo date("Y-m-d"); ?>" />
 				</div>
 				<label class="col-sm-1 control-label">đến</label>
 				<div class="col-sm-3">
-					<input type="date" name="ngayVe2" class="form-control" value="<?php echo date("Y-m-d");?>" />
+					<input type="date" name="ngayVe2" id="ngayVe2" class="form-control" value="<?php echo date("Y-m-d"); ?>" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -112,8 +111,16 @@
 			</div>
 			<hr class="alert-info" />
 			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<input type="submit" value="Gửi Yêu Cầu" class="btn btn-default" />
+				<div id="appendYC" class="col-sm-offset-2 col-sm-10">
+					<input name="submit" id="submitYC" type="submit" value="Gửi Yêu Cầu" class="btn btn-default" />
+				</div>
+				<div class="col-sm-offset-2 col-sm-10" id="checkDateYC" style="display: none;">
+					<span class="fa-stack"> <i class="fa fa-search fa-stack-1x"></i> <i class="fa fa-ban fa-stack-2x text-danger"></i> </span>
+					<strong class="text-danger">Ngày đi phải nhỏ hơn ngày về, Bạn hãy nhập lại!</strong>
+				</div>
+				<div class="col-sm-offset-2 col-sm-10" id="checkDateDiVeYC" style="display: none;">
+					<span class="fa-stack"> <i class="fa fa-search fa-stack-1x"></i> <i class="fa fa-ban fa-stack-2x text-danger"></i> </span>
+					<strong class="text-danger">Ngày đi, về không được nhỏ hơn hiện tại, Bạn hãy nhập lại!</strong>
 				</div>
 			</div>
 		</form>

@@ -15,7 +15,7 @@ class Bootstrap {
 
 		if (empty($url[0])) {
 			require 'Controllers/index.php';
-			$controller = new Index();
+			$controller = new index();
 			$controller->index();
 			return false;
 		}
@@ -36,7 +36,7 @@ class Bootstrap {
 		//
 		if(isset($url[2])) {
 			if (method_exists($controller, $url[1])) {
-				$controller->{$url[1]}($url[2]);
+				$controller->{$url[1]($url[2])};
 			} else {
 				$this->error();
 			}
@@ -58,7 +58,7 @@ class Bootstrap {
 	//
 	function error() {
 		require 'Controllers/error.php';
-		$controller = new Error();
+		$controller = new error();
 		$controller->index();
 		return false;
 	}

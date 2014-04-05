@@ -5,19 +5,6 @@
 	<div class="col-sm-offset-4 col-sm-4 well alert-success" id="messageBox" style="display: none;">
 		<h4 class="text-center"><span class="fa-stack"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-check fa-inverse fa-stack-1x"></i> </span> Gửi yêu cầu thành công!</h4>
 	</div>
-
-	<script>
-		$(document).ready(function() {
-			$("#submit").click(function(e) {
-				if ($("#dateDi").val() > $("#dateVe").val()) {
-					$("#dateDi,#dateVe").addClass("alert-danger");
-					$("#checkDate").delay(200).fadeIn(100).delay(2200).fadeOut(100);
-					$("#submit").fadeOut(100).delay(2600).fadeIn(100);
-					e.preventDefault(e);
-				}
-			});
-		});
-	</script>
 	<div class="col-sm-12 well">
 		<div class="row">
 			<div class="col-sm-6 text-center" style="">
@@ -83,12 +70,16 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<div class="col-sm-12">
+						<div id="append" class="col-sm-12">
 							<input type="submit" id="submit" value="Tìm Kiếm" class="btn btn-info" />
 						</div>
 						<div class="col-sm-12" id="checkDate" style="display: none;">
 							<span class="fa-stack"> <i class="fa fa-search fa-stack-1x"></i> <i class="fa fa-ban fa-stack-2x text-danger"></i> </span>
 							<strong class="text-danger">Ngày đi phải nhỏ hơn ngày về, Bạn hãy nhập lại!</strong>
+						</div>
+						<div class="col-sm-12" id="checkDateDiVe" style="display: none;">
+							<span class="fa-stack"> <i class="fa fa-search fa-stack-1x"></i> <i class="fa fa-ban fa-stack-2x text-danger"></i> </span>
+							<strong class="text-danger">Ngày đi, về không được nhỏ hơn hiện tại, Bạn hãy nhập lại!</strong>
 						</div>
 					</div>
 				</form>

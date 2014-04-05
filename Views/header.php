@@ -19,6 +19,14 @@
 		<script type="text/javascript" src="<?php echo URL; ?>public/js/bootstrap.js"></script>
 		<script type="text/javascript" src="<?php echo URL; ?>public/js/jquery.validate.min.js"></script>
 		<script type="text/javascript" src="<?php echo URL; ?>public/js/messages_vi.js"></script>
+		<?php
+		if(isset($this->js))
+		{
+			foreach ($this->js as $js) {
+				echo '<script type="text/javascript" src="'.URL.$js.'"></script>';
+			}	
+		}
+		?>
 		<script>
 			$(document).ready(function() {
 				$("#management").validate({

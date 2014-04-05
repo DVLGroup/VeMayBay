@@ -11,7 +11,7 @@
 					đường hàng không cho tất cả những ai trước đây được xem là không đủ khả năng
 					để đi lại bằng máy bay. </strong>
 				</p>
-				<img src="public/images/jetstar-logo.png" alt="jetstar" class="img-responsive"/>
+				<img src="<?php echo URL; ?>public/images/jetstar-logo.png" alt="jetstar" class="img-responsive"/>
 			</div>
 			<div class="col-sm-4">
 				<h2 class="text-danger"><strong>Vé Máy Bay VietJetAir</strong></h2>
@@ -21,17 +21,17 @@
 					là 600 tỷ đồng (tương đương 37.5 triệu USD tại thời điểm góp vốn).
 					Hãng được Bộ trưởng Bộ Tài chính Việt Nam phê duyệt cấp giấy phép vào tháng 11 năm 2007 </strong>
 				</p>
-				<img src="public/images/vietjetair-logo.png" alt="vietjetair" class="img-responsive"/>
+				<img src="<?php echo URL; ?>public/images/vietjetair-logo.png" alt="vietjetair" class="img-responsive"/>
 			</div>
 			<div class="col-sm-4">
-				<h2 class="text-yellow"><strong>Vé Máy Bay VietNam-Airline</strong></h2>
+				<h2 class="text-yellow"><strong>Vé Máy Bay VietNam-Airlines</strong></h2>
 				<p class="text-primary">
 					<strong> Hãng hàng không quốc gia Việt Nam (Vietnam Airlines) là thành phần nòng cốt của Tổng công ty
 					Hàng không Việt Nam. Hãng nằm dưới sự quản lý của một hội đồng 07 người do Thủ tướng chỉ định,
 					có các đường bay đến khu vực Đông Nam Á, Đông Á, châu Âu và châu Đại
 					Dương, với 46 điểm đến ở 19 quốc gia. </strong>
 				</p>
-				<img src="public/images/vietnam-airlines-logo.png" alt="VNA" class="img-responsive"/>
+				<img src="<?php echo URL; ?>public/images/vietnam-airlines-logo.png" alt="VNA" class="img-responsive"/>
 			</div>
 		</div>
 	</div>

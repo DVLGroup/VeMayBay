@@ -4,7 +4,7 @@
 		<hr class="alert-info" />
 		<div class="row">
 			<div class="col-sm-6">
-				<img src="public/images/tai-sao-den-voi-vna.png" />
+				<img class="img-responsive" src="<?php echo URL; ?>public/images/tai-sao-den-voi-vna.png" />
 			</div>
 			<div class="col-sm-6">
 				<br />
