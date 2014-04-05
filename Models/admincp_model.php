@@ -44,5 +44,17 @@
 			echo json_encode($result);
 		}
 
+		function showListUser(){
+			$query = "SELECT user.user_id, user.user_email, user.user_password, user_level.user_level_name FROM user, user_level WHERE user.user_level_id = user_level.user_level_id";
+			$result = $this->db->select($query);
+			//print_r($result);
+			echo json_encode($result);
+		}
+
+		function showListUserLevelName(){
+			$result = $this->db->select("SELECT * FROM user_level");
+			//print_r($result);
+			echo json_encode($result);
+		}
 		
 	}

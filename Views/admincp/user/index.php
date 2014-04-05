@@ -1,1 +1,67 @@
-This is User
+
+
+
+
+<div class="container" style="margin-top: 50px">
+
+	<div>
+		<h4>
+			<a data-toggle="collapse" href="#addUser">
+				<i class="glyphicon glyphicon-plus"></i> Thêm User
+			</a>
+		</h4>
+		<div id="addUser" class="panel-collapse collapse" style="width: 600px; margin: 10px auto;">
+			<form id="insertUser" action="user/xhrInsert" method="POST">
+				<div class="row">
+					<div class="col-md-8">
+						<div class="form-group" >
+							<label for="user_email">Email: </label>
+							<input id="user_email" type="email" class="form-control" name="user_email" placeHold="Nhập Email"/>
+						</div>
+						<div class="form-group" >
+							<label for="user_password">Mật khẩu: </label>
+							<input id="user_password" type="password" class="form-control" name="user_password" placeHold="Nhập Mật khẩu"/>
+						</div>
+						<div class="form-group" >
+							<label for="user_password_confirm">Xác thực mật khẩu: </label>
+							<input id="user_password_confirm" type="password" class="form-control" name="" placeHold="Nhập xác thực mật khẩu"/>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group" >
+							<label for="user_level">Nhóm quyền: </label>
+							<select id="user_level" class="form-control" name="user_level">
+								<option selected>Chọn nhóm quyền</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div style="text-align:center;">
+					<button type="submit" class="btn btn-primary">
+						<i class="glyphicon glyphicon-refresh loading"></i> Thêm
+					</button>
+				</div>
+			</form>
+		</div>
+		<hr>
+	</div>
+
+	<div>
+		<h4><i class="glyphicon glyphicon-list"></i> Danh sách User</h4>
+		<hr>
+		<table class="table table-bordered table-hover" id="table_user" class="display">
+		    <thead>
+		        <tr class="info">
+		            <th>ID</th>
+		            <th>Họ tên</th>
+		            <th>Email</th>
+		            <th>Role</th>
+		            <th>Tools</th>
+		        </tr>
+		    </thead>
+		    <tbody id="listUser">
+		    	
+		    </tbody>
+		</table>
+	</div>
+</div>

@@ -25,8 +25,15 @@ class Admincp extends Controller {
 		$this->view->render_admin('vemaybay/index');
 	}
 
-	function user() {
-		$this->view->render_admin('user/index');
+	function user($xhrGetListings = false) {
+		$this->view->js = URL . 'Views/admincp/user/js/default.js';
+		if($xhrGetListings == 'xhrGetListings'){
+			$this->model->showListUser();
+		} elseif($xhrGetListings == 'xhrGetUserLevelName'){
+			$this->model->showListUserLevelName();
+		} else {
+			$this->view->render_admin('user/index');
+		}
 	}
 
 	function yeucau($xhrGetListings = false) {
@@ -39,6 +46,8 @@ class Admincp extends Controller {
 		
 	}
 
+	
+	
 	/////////////////////////////
 	function login() {
 		$this->model->login();

@@ -12,7 +12,7 @@ $(function(){
 		html_record += '<td>:yeucau_loaive</td>';
 		html_record += '<td>:yeucau_soluong</td>';
 		html_record += '<td>:yeucau_ngaydi</td>';
-		html_record += '<td>:yeucau_ngayve</td></tr>';
+		html_record += '<td>:yeucau_ngayve</td>';
 		html_record += '</tr>';
 		
 		for (var j = 0; j < rs.length; j++) {
