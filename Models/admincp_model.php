@@ -37,24 +37,33 @@
 			exit;
 		}
 
-		/////////////////////////////
-		function showListYeuCau(){
+		///////////////////////////// YEU CAU //////////////////////////
+		function getListYeuCau(){
 			$result = $this->db->select("SELECT * FROM yeu_cau");
-			//print_r($result);
 			echo json_encode($result);
 		}
 
-		function showListUser(){
+		///////////////////////////// USER //////////////////////////
+		function getListUser(){
 			$query = "SELECT user.user_id, user.user_email, user.user_password, user_level.user_level_name FROM user, user_level WHERE user.user_level_id = user_level.user_level_id";
 			$result = $this->db->select($query);
-			//print_r($result);
 			echo json_encode($result);
 		}
 
-		function showListUserLevelName(){
+		function getListUserLevelName(){
 			$result = $this->db->select("SELECT * FROM user_level");
-			//print_r($result);
 			echo json_encode($result);
 		}
 		
+		function insertUser() {
+			$data = array(
+					'user_email'=> $_POST['user_email'],
+					'user_password'=> Hash::create('md5', $_POST['user_password'], HASH_KEY),
+					'user_level_id'=> $_POST['user_level_id']
+				);
+			$insert = $this->db->insert('user', $data);
+			echo 'success';
+		}
+
+		///////////////////////////// ??? //////////////////////////
 	}

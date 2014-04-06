@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-
+	//get user_level
 	$.get('user/xhrGetUserLevelName', function(rs){
 		var html;
 		var option = '<option value=":user_level_id">:user_level_name</option>';
@@ -11,23 +11,9 @@ $(document).ready(function(){
 		}
 	}, 'json');
 	
+	
 
-	$('#insertUser').on('submit', function(){
-		var url = $(this).attr('action');
-		var data = $(this).serialize();
-		alert(data);
-		$.post(url, data, function(rs, status) {
-			$('loading').css('display','block');
-			if(status == 'success'){
-				alert('Thêm thành công!');
-			} else{
-				alert('That bai');
-			}
-		}, 'json');
-		return false;
-	});
-
-
+	//Gird dataTable User
 	jQuery.get('user/xhrGetListings', function(rs){
 		console.log(rs);
 		var result;
@@ -52,5 +38,38 @@ $(document).ready(function(){
 
 		$('#table_user').dataTable( );
 	}, 'json');
+
+
+
+	//insert User
+	$('#insertUser').on('submit', function(){
+		$('.loading');
+
+		var url = $(this).attr('action');
+		var data = $(this).serialize();
+
+		// $.post(url, data, function(rs, status) {
+		// 	alert(status);
+		// 	if(status == 'success'){
+		// 		alert('Thêm thành công!');
+		// 	} else{
+		// 		alert('That bai');
+		// 	}
+		// }, 'json');
+
+		$.ajax({
+			type: "POST",
+			url: url,
+			data: data,
+			success: function(rs){
+				if(rs == 'success'){
+					alert('Them thanh cong');
+				} else {
+					alert('Them that bai');
+				}
+			}
+		})
+		return false;
+	});
 
 });

@@ -1,6 +1,6 @@
 
 
-
+<h1 align="center">Quản lý User</h1>
 
 <div class="container" style="margin-top: 50px">
 
@@ -30,8 +30,8 @@
 					<div class="col-md-4">
 						<div class="form-group" >
 							<label for="user_level">Nhóm quyền: </label>
-							<select id="user_level" class="form-control" name="user_level">
-								<option selected>Chọn nhóm quyền</option>
+							<select id="user_level" class="form-control" name="user_level_id">
+								<option value selected>Chọn nhóm quyền</option>
 							</select>
 						</div>
 					</div>
@@ -40,6 +40,12 @@
 					<button type="submit" class="btn btn-primary">
 						<i class="glyphicon glyphicon-refresh loading"></i> Thêm
 					</button>
+					<button type="button" class="btn btn-primary btn-hide-addUser"> Hide </button>
+					<script type="text/javascript">
+						$('.btn-hide-addUser').on('click', function(){
+							('#addUser').collapse('hide');
+						});
+					</script>
 				</div>
 			</form>
 		</div>

@@ -25,13 +25,24 @@ class Admincp extends Controller {
 		$this->view->render_admin('vemaybay/index');
 	}
 
-	function user($xhrGetListings = false) {
+	function user($xhr = false) {
 		$this->view->js = URL . 'Views/admincp/user/js/default.js';
-		if($xhrGetListings == 'xhrGetListings'){
-			$this->model->showListUser();
-		} elseif($xhrGetListings == 'xhrGetUserLevelName'){
-			$this->model->showListUserLevelName();
-		} else {
+		if($xhr == 'xhrGetListings'){
+			$this->model->getListUser();
+		} 
+		elseif($xhr == 'xhrGetUserLevelName'){
+			$this->model->getListUserLevelName();
+		} 
+		elseif($xhr == 'xhrInsert'){
+			$this->model->insertUser();
+		} 
+		elseif($xhr == 'xhrUpdate'){
+			$this->model->updateUser();
+		}
+		elseif($xhr == 'xhrDelete'){
+			$this->model->deleteUser();
+		}
+		else {
 			$this->view->render_admin('user/index');
 		}
 	}
@@ -39,7 +50,7 @@ class Admincp extends Controller {
 	function yeucau($xhrGetListings = false) {
 		$this->view->js = URL . 'Views/admincp/yeucau/js/default.js';
 		if($xhrGetListings == 'xhrGetListings'){
-			$this->model->showListYeuCau();
+			$this->model->getListYeuCau();
 		} else {
 			$this->view->render_admin('yeucau/index');
 		}
