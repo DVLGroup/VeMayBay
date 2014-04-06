@@ -1,4 +1,7 @@
 $(document).ready(function(){
+	//Function
+
+
 	//variable
 	var html_record = '<tr>';
 		html_record += '<td>:user_id</td>';

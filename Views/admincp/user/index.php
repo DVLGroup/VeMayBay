@@ -6,13 +6,18 @@
 
 	<div>
 		<h4>
-			<a data-toggle="collapse" href="#addUser">
+			<a class="abc" data-toggle="collapse" href="#addUser">
 				<i class="glyphicon glyphicon-plus"></i> Thêm User
 			</a>
 		</h4>
 		<div id="addUser" class="panel-collapse collapse" style="width: 600px; margin: 10px auto;">
 			<form id="insertUser" action="user/xhrInsert" method="POST">
 				<div class="row">
+					<div align="center">
+						<h4 class="status text-success">Success!</h4>
+						<h4 class="status text-danger">Error</h4>
+					</div>
+					
 					<div class="col-md-8">
 						<div class="form-group" >
 							<label for="user_email">Email: </label>
@@ -43,7 +48,7 @@
 					<button type="button" class="btn btn-primary btn-hide-addUser"> Hide </button>
 					<script type="text/javascript">
 						$('.btn-hide-addUser').on('click', function(){
-							('#addUser').collapse('hide');
+							$('#addUser').collapse('hide');
 						});
 					</script>
 				</div>
