@@ -61,8 +61,13 @@
 					'user_password'=> Hash::create('md5', $_POST['user_password'], HASH_KEY),
 					'user_level_id'=> $_POST['user_level_id']
 				);
-			$insert = $this->db->insert('user', $data);
-			echo 'success';
+			
+			if($this->db->insert('user', $data)){
+				echo 'success';
+			} else {
+				echo 'error';
+			}
+			
 		}
 
 		function deleteUser() {
