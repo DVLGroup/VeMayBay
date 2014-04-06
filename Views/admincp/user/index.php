@@ -55,9 +55,9 @@
 	<div>
 		<h4><i class="glyphicon glyphicon-list"></i> Danh sách User</h4>
 		<hr>
-		<table class="table table-bordered table-hover" id="table_user" class="display">
+		<table class="table table-bordered table-hover" id="table_user">
 		    <thead>
-		        <tr class="info">
+		        <tr>
 		            <th>ID</th>
 		            <th>Họ tên</th>
 		            <th>Email</th>

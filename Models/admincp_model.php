@@ -65,5 +65,10 @@
 			echo 'success';
 		}
 
+		function deleteUser() {
+			$id = $_POST['user_id'];
+			$delete = $this->db->delete('user', "user_id = '$id'");
+		}
+
 		///////////////////////////// ??? //////////////////////////
 	}

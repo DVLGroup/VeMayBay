@@ -15,7 +15,7 @@ $(document).ready(function(){
 
 	//Gird dataTable User
 	jQuery.get('user/xhrGetListings', function(rs){
-		console.log(rs);
+		//console.log(rs);
 		var result;
 		var html_record = '<tr>';
 		html_record += '<td>:user_id</td>';
@@ -24,19 +24,30 @@ $(document).ready(function(){
 		html_record += '<td>:user_level_name</td>';
 		html_record += '<td>';
 		html_record += '<a href=""><i class="glyphicon glyphicon-wrench"></i> Sửa</a> - ';
-		html_record += '<a href=""><i class="glyphicon glyphicon-remove"></i> Xóa</a>';
+		html_record += '<a class="del" rel=":user_id" href="#"><i class="glyphicon glyphicon-remove"></i> Xóa</a>';
 		html_record += '</td>';
 		html_record += '</tr>';
 		
 		for (var j = 0; j < rs.length; j++) {
 			result = html_record.replace(':user_id', rs[j].user_id);
+			result = result.replace(':user_id', rs[j].user_id);
 			result = result.replace(':user_hoten', rs[j].user_hoten);
 			result = result.replace(':user_email', rs[j].user_email);
 			result = result.replace(':user_level_name', rs[j].user_level_name);
 			$('#listUser').append(result);
 		}
 
+		//delete User
+		$('.del').on('click',function(){
+			var delItem = $(this);
+			var id = $(this).attr('rel');
+			$.post('user/xhrDelete', {'user_id':id}, function(rs){
+				delItem.parent().parent().remove();
+			});
+		});
+
 		$('#table_user').dataTable( );
+
 	}, 'json');
 
 
@@ -44,7 +55,7 @@ $(document).ready(function(){
 	//insert User
 	$('#insertUser').on('submit', function(){
 		$('.loading');
-
+		var insertItem = $('#listUser');
 		var url = $(this).attr('action');
 		var data = $(this).serialize();
 
@@ -64,6 +75,7 @@ $(document).ready(function(){
 			success: function(rs){
 				if(rs == 'success'){
 					alert('Them thanh cong');
+					insertUser.append('<tr><td>50</td><td class=" ">undefined</td><td class=" ">admin@gmail.com</td><td class=" ">Admin</td><td class=" "><a href=""><i class="glyphicon glyphicon-wrench"></i> Sửa</a> - <a class="del" rel="49" href="#"><i class="glyphicon glyphicon-remove"></i> Xóa</a></td></tr>');
 				} else {
 					alert('Them that bai');
 				}
@@ -71,5 +83,8 @@ $(document).ready(function(){
 		})
 		return false;
 	});
+
+
+	
 
 });
