@@ -1,9 +1,9 @@
 <div class="row">
-	<div class="col-sm-offset-5 col-sm-2" id="loading" style="display: none;">
-		<h4 class="text-center"><i class="fa fa-refresh fa-2x fa-spin text-success"></i></h4>
+	<div class="col-sm-offset-5 col-sm-2 text-center" id="loading" style="display: none;margin-bottom: 20px;">
+		<i class="fa fa-refresh fa-3x fa-spin text-primary"></i>
 	</div>
-	<div class="col-sm-offset-4 col-sm-4 well alert-success" id="messageBox" style="display: none;">
-		<h4 class="text-center"><span class="fa-stack"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-check fa-inverse fa-stack-1x"></i> </span> Gửi yêu cầu thành công!</h4>
+	<div class="col-sm-offset-4 col-sm-4 thumbnail alert-success" id="messageBox" style="display: none;">
+		<h5 class="text-center"><span class="fa-stack"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-check fa-inverse fa-stack-1x"></i> </span> Gửi yêu cầu thành công!</h5>
 	</div>
 	<div class="col-sm-12 well">
 		<div class="row">

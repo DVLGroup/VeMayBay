@@ -1,7 +1,9 @@
 function raiseMsg() {
 	$(document).ready(function() {
 		$("#loading").fadeIn(800).delay(800).fadeOut(800);
-		$("#messageBox").delay(2400).fadeIn(600).delay(800).fadeOut(600);
+		$("#messageBox").delay(2400).fadeIn(200).delay(1000).fadeOut(600);
+		$("#loadNearButton").fadeIn(800).delay(800).fadeOut(800);
+		$("#msgNearButton").delay(2400).fadeIn(200).delay(1000).fadeOut(600);
 	});
 }
 
@@ -17,7 +19,6 @@ $(document).on('click', '#submitYC', function(e) {
 
 $(document).ready(function() {
 	$("#submitYC").click(function(e) {
-		alert(1);
 		if ($("#ngayDi2").val() > $("#ngayVe1").val()) {
 			$("#ngayVe1,#ngayDi2").addClass("alert-danger");
 			$("#checkDateYC").delay(200).fadeIn(100).delay(2200).fadeOut(100);
@@ -29,6 +30,9 @@ $(document).ready(function() {
 	$("#ngayDi1,#ngayVe1,#ngayDi2,#ngayVe2").change(function(e) {
 		if ($("#ngayVe1").val() < $("#ngayDi1").val()) {
 			$("#ngayVe1").val($("#ngayDi1").val());
+		}
+		if ($("#ngayDi2").val() > $("#ngayVe1").val()) {
+			$("#ngayVe1").val($("#ngayDi2").val());
 		}
 		if ($("#ngayDi2").val() < $("#ngayDi1").val()) {
 			$("#ngayDi2").val($("#ngayDi1").val());

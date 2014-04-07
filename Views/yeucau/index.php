@@ -3,8 +3,6 @@
 	Session::init();
 	$check = Session::get('check');
 	if(isset($check) && $check==1){
-
-
 	?>
 	<script>
 		raiseMsg();
@@ -14,6 +12,7 @@
 	}
 	Session::destroy();
 	?>
+
 	<div class="col-sm-offset-2 col-sm-8 col-sm-offset-2 well">
 		<h3 class="text-info"><strong>Yêu Cầu Săn Vé</strong></h3>
 		<hr class="alert-info" />
@@ -113,6 +112,14 @@
 			<div class="form-group">
 				<div id="appendYC" class="col-sm-offset-2 col-sm-10">
 					<input name="submit" id="submitYC" type="submit" value="Gửi Yêu Cầu" class="btn btn-default" />
+					<i id="loadNearButton" class="fa fa-refresh fa-spin fa-lg text-success" style="display: none;"></i>
+					<i id="msgNearButton" class="text-success" style="display: none;">
+					<span class="fa-stack"> 
+						<i class="fa fa-circle fa-stack-2x"></i> 
+						<i class="fa fa-check fa-inverse fa-stack-1x"></i> 
+					</span> 
+					Gửi yêu cầu thành công!
+					</i>
 				</div>
 				<div class="col-sm-offset-2 col-sm-10" id="checkDateYC" style="display: none;">
 					<span class="fa-stack"> <i class="fa fa-search fa-stack-1x"></i> <i class="fa fa-ban fa-stack-2x text-danger"></i> </span>
