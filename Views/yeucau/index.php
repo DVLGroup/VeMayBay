@@ -12,7 +12,19 @@
 	}
 	Session::destroy();
 	?>
-
+	<!-- <script type="text/javascript">
+    $(document).ready( function () {
+        $("#management").submit( function () {
+            var formdata = $(this).serialize();
+            $.ajax({
+                type: "POST",
+                url: "submit.php",
+                data: formdata,
+             });
+            return false;
+        });
+    });
+	</script> -->
 	<div class="col-sm-offset-2 col-sm-8 col-sm-offset-2 well">
 		<h3 class="text-info"><strong>Yêu Cầu Săn Vé</strong></h3>
 		<hr class="alert-info" />

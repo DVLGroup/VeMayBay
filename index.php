@@ -8,7 +8,7 @@
 	function __autoload($class){
 		require LIBS . $class .'.php';
 	}
-	
+	require_once 'Libs/class.phpmailer.php';
 	require_once("src/facebook.php");
 
   	$config = array(
