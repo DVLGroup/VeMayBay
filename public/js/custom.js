@@ -7,14 +7,14 @@ $(document).on('click', '#submit', function(e) {
 	}
 });
 $(document).ready(function() {
-	$("#submit").click(function(e) {
-		if ($("#dateDi").val() > $("#dateVe").val()) {
-			$("#dateDi,#dateVe").addClass("alert-danger");
-			$("#checkDate").delay(200).fadeIn(100).delay(2200).fadeOut(100);
-			$("#submit").fadeOut(100).delay(2600).fadeIn(100);
-			e.preventDefault(e);
-		}
-	});
+	// $("#submit").click(function(e) {
+		// if ($("#dateDi").val() > $("#dateVe").val()) {
+			// $("#dateDi,#dateVe").addClass("alert-danger");
+			// $("#checkDate").delay(200).fadeIn(100).delay(2200).fadeOut(100);
+			// $("#submit").fadeOut(100).delay(2600).fadeIn(100);
+			// e.preventDefault(e);
+		// }
+	// });
 	$a = $("#dateDi").val();
 	$("#dateDi,#dateVe").change(function(e) {
 		if ($("#dateVe").val() < $("#dateDi").val()) {
@@ -26,10 +26,10 @@ $(document).ready(function() {
 			$("#submit").fadeOut(100);
 			$("#submit").remove();
 			e.preventDefault(e);
-		} else {
+		} else if($("#dateDi").val() >= $a) {
 			$(this).removeClass("alert-danger");
 			if ($("#submit").length != 1) {
-				$("#append").append('<input type="submit" id="submit" value="Tìm Kiếm" class="btn btn-info" Style="display: none;"/>');
+				$("#append").prepend('<input type="button" id="submit" value="Tìm Kiếm" class="btn btn-info" Style="display: none;"/>');
 				$("#checkDateDiVe").fadeOut(100);
 				$("#submit").delay(100).fadeIn(100);
 			}

@@ -41,6 +41,19 @@
 	</div>
 	<!-- Booking items -->
 	<div class="col-sm-12 well">
-		hello
+		<?php
+		foreach ($this->json as $item) {
+			echo "</br>
+			Tên: " . $item['name'] . 
+			" | Loại vé: " . $item['trangthai'] . 
+			" | TG bay: " . $item['time1'] . 
+			" | Bay đi: " . $item['Origin'] . 
+			" | TG bay về: " . $item['time2'] . 
+			" | Bay về: " . $item['Destination'] . 
+			" | Hạng vé: " . $item['type_journey'] . 
+			" | Giá(chưa thuế): " . $item['cost'] . 
+			" | Mã chuyến bay: " . $item['codes_flight'] .$item['crypt'] ."</br>";
+		}
+		?>
 	</div>
 </div>
