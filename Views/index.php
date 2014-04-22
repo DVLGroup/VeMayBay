@@ -1,3 +1,7 @@
+<?php
+Session::init();
+Session::destroy();
+?>
 <div class="row">
 	<div class="col-sm-12 well">
 		<div class="row">

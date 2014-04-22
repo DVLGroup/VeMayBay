@@ -11,12 +11,21 @@ class chonchuyenbay extends Controller {
 	function index() {
 		Session::init();
 		if (!isset($_SESSION['check'])) {
-			if (!isset($_POST['jsonFile'])) {
-				header('Location:'. URL .'index');
+			if (!isset($_POST['jsonFile']) && !isset($_POST['oriName']) && !isset($_POST['desName']) && !isset($_POST['dateGo']) && !isset($_POST['dateBack'])) {
+				header('Location:' . URL . 'index');
 			}
-			$_SESSION['check'] = $_POST['jsonFile'];
+			Session::set('check', $_POST['jsonFile']);
+			Session::set('oriName', $_POST['oriName']);
+			Session::set('desName', $_POST['desName']);
+			Session::set('dateGo', $_POST['dateGo']);
+			Session::set('dateBack', $_POST['dateBack']);
+			// unset($_POST['jsonFile']);
+			// unset($_POST['oriName']);
+			// unset($_POST['desName']);
+			// unset($_POST['dateGo']);
+			// unset($_POST['dateBack']);
 		}
-		$this->view->json = json_decode($_SESSION['check'], true);
+		$this -> view -> json = json_decode(Session::get('check'), true);
 		// print_r($json);
 		// $i = 0;
 		// $min = null;

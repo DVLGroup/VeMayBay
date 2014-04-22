@@ -1,7 +1,3 @@
-<?php
-Session::init();
-Session::destroy();
-?>
 <script type="text/javascript">
 	$(document).on('click', '#submit', function(){
 			d = new Date($("#dateDi").val());
@@ -16,7 +12,7 @@ Session::destroy();
 			year = d.getFullYear();
 			time2 = date+"/"+parseInt(month+1)+"/"+year;
 			// alert(time1+time2);
-			var data = "url=http://vietjetair-nduc1888.rhcloud.com/ajax_VNairlines.php&RoundTrip=" + $("#RoundTrip").val() + 
+			var data = "url=http://vietjetair-nduc1888.rhcloud.com/ajax_VNairlines.php&RoundTrip=" + $("input[name=loaiVe]:checked").val() + 
 			"&Origin1=" + $("#Origin1").val() + "&Destination1=" + $("#Destination1").val() + 
 			"&_time1=" + time1 + "&_time2=" + time2 + 
 			"&traveler=" + $("#People").val() + "&baby=" + $("#Child").val() + "&newborn=" + $("#NewBorn").val();
@@ -30,6 +26,10 @@ Session::destroy();
 					console.log('Success ' + data);
 					// $("#result").html(data);
 					$("#storeJson").val(data);
+					$("#oriName").val($("#Origin1").text());
+					$("#desName").val($("#Destination1").text());
+					$("#dateGo").val(time1);
+					$("#dateBack").val(time2);
 					// var a = data;
 					// alert(a);
 					$("#formJson").submit();
@@ -46,6 +46,10 @@ Session::destroy();
 <div class="row">
 	<form id="formJson" method="post" action="chonchuyenbay/index" style="display: none">
 		<input type="hidden" value="" name="jsonFile" id="storeJson" />
+		<input type="hidden" value="" name="oriName" id="oriName" />
+		<input type="hidden" value="" name="desName" id="desName" />
+		<input type="hidden" value="" name="dateGo" id="dateGo" />
+		<input type="hidden" value="" name="dateBack" id="dateBack" />
 	</form>
 	<div class="col-sm-offset-5 col-sm-2 text-center" id="loading" style="display: none;margin-bottom: 20px;">
 		<i class="fa fa-refresh fa-3x fa-spin text-primary"></i>
