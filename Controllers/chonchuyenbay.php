@@ -6,30 +6,57 @@ class chonchuyenbay extends Controller {
 
 	function __construct() {
 		parent::__construct();
+		$this -> view -> js = array('Views/chonchuyenbay/js/custom.js');
 	}
 
 	function index() {
+		if (isset($_SESSION['check'])) {
+			$this -> view -> json = json_decode(Session::get('check'), true);
+			// print_r($json);
+			// $i = 0;
+			// $min = null;
+			$this -> view -> render('chonchuyenbay/index', TRUE);
+		} else {
+			header("Location:" . URL . "index");
+		}
+	}
+
+	function getSession() {
 		Session::init();
-		if (!isset($_SESSION['check'])) {
-			if (!isset($_POST['jsonFile']) && !isset($_POST['oriName']) && !isset($_POST['desName']) && !isset($_POST['dateGo']) && !isset($_POST['dateBack'])) {
-				header('Location:' . URL . 'index');
-			}
+		// if (!isset($_SESSION['check'])) {
+			// if (!isset($_POST['jsonFile']) && !isset($_POST['oriName']) && !isset($_POST['desName']) && !isset($_POST['dateGo']) && !isset($_POST['dateBack'])) {
+				// header('Location:' . URL . 'index');
+			// }
 			Session::set('check', $_POST['jsonFile']);
 			Session::set('oriName', $_POST['oriName']);
 			Session::set('desName', $_POST['desName']);
+			Session::set('ori', $_POST['ori']);
+			Session::set('des', $_POST['des']);
 			Session::set('dateGo', $_POST['dateGo']);
 			Session::set('dateBack', $_POST['dateBack']);
+			Session::set('nguoiLon', $_POST['adult']);
+			Session::set('treEm', $_POST['kid']);
+			Session::set('soSinh', $_POST['baby']);
+			Session::set('loaiVe', $_POST['ticketType']);
 			// unset($_POST['jsonFile']);
 			// unset($_POST['oriName']);
 			// unset($_POST['desName']);
 			// unset($_POST['dateGo']);
 			// unset($_POST['dateBack']);
-		}
-		$this -> view -> json = json_decode(Session::get('check'), true);
-		// print_r($json);
-		// $i = 0;
-		// $min = null;
-		$this -> view -> render('chonchuyenbay/index', TRUE);
+			// unset($_POST['adult']);
+			// unset($_POST['kid']);
+			// unset($_POST['baby']);
+			// unset($_POST['ticketType']);
+		// }
+		header("Location: " . URL . "chonchuyenbay/index");
+	}
+
+	function fillComboBox1() {
+		$this -> model -> fillCombo1();
+	}
+
+	function fillComboBox2() {
+		$this -> model -> fillCombo2();
 	}
 
 	function proxy() {

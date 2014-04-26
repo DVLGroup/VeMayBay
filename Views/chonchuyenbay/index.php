@@ -1,3 +1,9 @@
+<script type="text/javascript">
+</script>
+<input type="hidden" value="<?php echo Session::get('nguoiLon'); ?>" id="nguoiLon" name="nguoiLon"/>
+<input type="hidden" value="<?php echo Session::get('treEm'); ?>" id="treEm" name="treEm"/>
+<input type="hidden" value="<?php echo Session::get('soSinh'); ?>" id="soSinh" name="soSinh"/>
+<input type="hidden" value="<?php echo Session::get('loaiVe'); ?>" id="loaiVe" name="loaiVe"/>
 <div class="row">
 	<!-- Step by steps -->
 	<div class="col-sm-12 well">
@@ -24,13 +30,13 @@
 		<div class="row">
 			<div class="col-sm-9">
 				<div class="alert-success thumbnail">
-					<h5><strong>Vé máy bay chiều:</strong>
-						<strong class="lead text-orange"><?php echo Session::get('oriName'); ?></strong> <strong>-</strong> <strong class="lead text-info"><?php echo Session::get('desName'); ?></strong>
+					<h5 class="text-danger"><strong>Vé máy bay chiều:</strong>
+						<strong class=""><?php echo Session::get('oriName'); ?></strong> <strong><i class="fa fa-arrow-right"></i></strong> <strong class=""><?php echo Session::get('desName'); ?></strong>
 					</h5>
 					
-					<h5>Ngày: <?php echo Session::get('dateGo'); ?></h5>
+					<h5 class="text-danger">Ngày: <?php echo Session::get('dateGo'); ?></h5>
 				</div>
-				<div style="height: 250px; overflow: auto" class="table-responsive">
+				<div style="height: 450px; overflow: auto" class="table-responsive">
 				<table class="table table-striped table-hover table-responsive">
 					<tr>
 						<th>Hãng</th>
@@ -44,11 +50,15 @@
 					<?php
 					$i = 1;
 					if (isset($this -> json)) {
+
 						foreach ($this->json as $item) {
 							if ($item['trangthai'] == 0) {
 								echo "<tr>";
-								echo "<td>";
+								echo "<td style='display: none;'>";
 								echo $item['name'];
+								echo "</td>";
+								echo "<td>";
+								echo "<img src='" . URL . "/public/images/VNairlines_logo.png' />";
 								echo "</td>";
 								echo "<td>";
 								echo $item['time1'];
@@ -69,7 +79,7 @@
 								echo $item['crypt'];
 								echo "</td>";
 								echo "<td>";
-								echo "<input type='radio' name='chooseGo' id='chooseGo" . $i . "' />";
+								echo "<input type='radio' name='chooseGo' id='chooseGo" . $i . "' value='" . $item['name'] ."|". $item['time1'] ."|". $item['time2'] ."|". $item['cost'] ."|". $item['type_journey'] ."|". $item['codes_flight'] ."|". $item['crypt'] . "' />";
 								echo "</td>";
 								echo "</tr>";
 								$i++;
@@ -89,14 +99,16 @@
 					?>
 				</table>
 				</div>
+				<?php if(Session::get('loaiVe') == 1){
+				?>
 				<div class="alert-success thumbnail">
-					<h5><strong>Vé máy bay chiều:</strong>
-						<strong class="lead text-info"><?php echo Session::get('desName'); ?></strong> <strong>-</strong> <strong class="lead text-orange"><?php echo Session::get('oriName'); ?></strong>
+					<h5 class="text-danger"><strong>Vé máy bay chiều:</strong>
+						<strong class=""><?php echo Session::get('desName'); ?></strong> <strong><i class="fa fa-arrow-right"></i></strong> <strong class=""><?php echo Session::get('oriName'); ?></strong>
 					</h5>
 					
-					<h5>Ngày: <?php echo Session::get('dateBack'); ?></h5>
+					<h5 class="text-danger">Ngày: <?php echo Session::get('dateBack'); ?></h5>
 				</div>
-				<div style="height: 250px; overflow: auto" class="table-responsive">
+				<div style="height: 450px; overflow: auto" class="table-responsive">
 				<table class="table table-striped table-hover table-responsive">
 					<tr>
 						<th>Hãng</th>
@@ -113,8 +125,11 @@
 						foreach ($this->json as $item) {
 							if ($item['trangthai'] == 1) {
 								echo "<tr>";
-								echo "<td>";
+								echo "<td style='display: none;'>";
 								echo $item['name'];
+								echo "</td>";
+								echo "<td>";
+								echo "<img src='" . URL . "/public/images/VNairlines_logo.png' />";
 								echo "</td>";
 								echo "<td>";
 								echo $item['time1'];
@@ -135,7 +150,7 @@
 								echo $item['crypt'];
 								echo "</td>";
 								echo "<td>";
-								echo "<input type='radio' name='chooseBack' id='chooseBack" . $i . "' />";
+								echo "<input type='radio' name='chooseBack' id='chooseBack" . $i . "' value='" . $item['name'] ."|". $item['time1'] ."|". $item['time2'] ."|". $item['cost'] ."|". $item['type_journey'] ."|". $item['codes_flight'] ."|". $item['crypt'] . "' />";
 								echo "</td>";
 								echo "</tr>";
 								$i++;
@@ -155,6 +170,102 @@
 					?>
 				</table>
 				</div>
+				<?php }?>
+			</div>
+			<div class="col-sm-3">
+				<h4 class="text-danger"><i class="fa fa-2x fa-shopping-cart text-muted"></i> Tóm tắt thông tin</h4>
+				<?php if(Session::get('loaiVe') == 1)
+				{
+				?>
+				<div class="alert-info thumbnail">
+					<button class="btn btn-lg btn-block btn-info" id="submitCart1">
+						<i class="fa fa-search"></i>
+						Tiếp tục
+					</button>
+					<br />
+					<p class="lead text-danger"><?php echo Session::get('ori'); ?> <i class="fa fa-arrow-right"></i> <?php echo Session::get('des'); ?></p>
+					<label>Giá vé: </label>
+					<div class="pull-right text-danger" id="giaVe1">0</div>
+					<br />
+					<label>Thuế và phí: </label>
+					<div class="pull-right text-danger" id="thuePhi1">0</div>
+					<br />
+					<label>Tổng: </label>
+					<div class="pull-right text-danger" id="tong1">0</div>
+					<br />
+					<hr />
+					<p class="lead text-danger"><?php echo Session::get('des'); ?> <i class="fa fa-arrow-right"></i> <?php echo Session::get('ori'); ?></p>
+					<label>Giá vé: </label>
+					<div class="pull-right text-danger" id="giaVe2">0</div>
+					<br />
+					<label>Thuế và phí: </label>
+					<div class="pull-right text-danger" id="thuePhi2">0</div>
+					<br />
+					<label>Tổng: </label>
+					<div class="pull-right text-danger" id="tong2">0</div>
+					<hr />
+					<form method="post" class="form-horizontal" id="cart" action="<?php echo URL; ?>thongtinkh/getSession">
+						<input type="hidden" name="total" id="total" />
+						
+						<input type="hidden" name="_aName" id="_aName" />
+						<input type="hidden" name="_timeGo1" id="_timeGo1" />
+						<input type="hidden" name="_timeGo2" id="_timeGo2" />
+						<input type="hidden" name="_cost1" id="_cost1" />
+						<input type="hidden" name="_hangVe1" id="_hangVe1" />
+						<input type="hidden" name="_codeFlight1" id="_codeFlight1" />
+						<input type="hidden" name="_crypt1" id="_crypt1" />
+						
+						<input type="hidden" name="_timeBack1" id="_timeBack1" />
+						<input type="hidden" name="_timeBack2" id="_timeBack2" />
+						<input type="hidden" name="_cost2" id="_cost2" />
+						<input type="hidden" name="_hangVe2" id="_hangVe2" />
+						<input type="hidden" name="_codeFlight2" id="_codeFlight2" />
+						<input type="hidden" name="_crypt2" id="_crypt2" />
+						
+						<label class="lead">Tổng cộng: </label>
+						<div class="pull-right lead text-danger" id="tongCong">0</div>
+					</form>
+				</div>
+				<?php
+				}
+                ?>
+				<?php if(Session::get('loaiVe') == 0)
+				{
+				?>
+				<div class="alert-info thumbnail">
+					<button class="btn btn-lg btn-block btn-info" id="submitCart2">
+						<i class="fa fa-search"></i>
+						Tiếp tục
+					</button>
+					<br />
+					<p class="lead text-danger"><?php echo Session::get('ori'); ?> <i class="fa fa-arrow-right"></i> <?php echo Session::get('des'); ?></p>
+					<label>Giá vé: </label>
+					<div class="pull-right text-danger" id="giaVe1">0</div>
+					<br />
+					<label>Thuế và phí: </label>
+					<div class="pull-right text-danger" id="thuePhi1">0</div>
+					<br />
+					<label>Tổng: </label>
+					<div class="pull-right text-danger" id="tong1">0</div>
+					<hr />
+					<form method="post" class="form-horizontal" id="cart" action="<?php echo URL; ?>thongtinkh/getSession">
+						<input type="hidden" name="total" id="total" />
+						
+						<input type="hidden" name="_aName" id="_aName" />
+						<input type="hidden" name="_timeGo1" id="_timeGo1" />
+						<input type="hidden" name="_timeGo2" id="_timeGo2" />
+						<input type="hidden" name="_cost1" id="_cost1" />
+						<input type="hidden" name="_hangVe1" id="_hangVe1" />
+						<input type="hidden" name="_codeFlight1" id="_codeFlight1" />
+						<input type="hidden" name="_crypt1" id="_crypt1" />
+						
+						<label class="lead">Tổng cộng: </label>
+						<div class="pull-right lead text-danger" id="tongCong">0</div>
+					</form>
+				</div>
+				<?php
+				}
+                ?>
 			</div>
 		</div>
 	</div>
