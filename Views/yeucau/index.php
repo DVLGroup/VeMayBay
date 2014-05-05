@@ -1,13 +1,12 @@
 <div class="row">
 	<?php
-	Session::init();
+	//Session::init();
 	$check = Session::get('check');
 	if(isset($check) && $check==1){
 	?>
 	<script>
 		raiseMsg();
 	</script>
-
 	<?php
 	}
 	Session::destroy();

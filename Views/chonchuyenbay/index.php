@@ -29,6 +29,183 @@
 	<div class="col-sm-12 well">
 		<div class="row">
 			<div class="col-sm-9">
+				<div class="alert-danger thumbnail">
+					<h3 class="text-danger"><strong>Giá vé rẻ nhất</strong></h3>
+				</div>
+				<div class="table-responsive">
+					<strong class="text-danger"><?php echo Session::get('oriName'); ?></strong> 
+					<strong class="text-muted"><i class="fa fa-arrow-right"></i></strong> 
+					<strong class="text-danger"><?php echo Session::get('desName'); ?></strong>
+				<table class="table table-striped table-hover table-responsive alert-danger">
+					<tr>
+						<th>Hãng</th>
+						<th>Khởi hành</th>
+						<th>Đến nơi</th>
+						<th>Giá</th>
+						<th>Hạng vé</th>
+						<th>Chuyến bay</th>
+						<th>chọn</th>
+					</tr>
+					<?php
+					$i = 1;
+					$minCost = null;
+					$minName =null;
+					$minTime1 = null;
+					$minTime2 = null;
+					$minType = null;
+					$minFlight = null;
+					$minCrypt = null;
+					if (isset($this -> json)) {
+
+						foreach ($this->json as $item) {
+							if ($item['trangthai'] == 0) {
+								if($minCost == null)
+								{
+									$minCost = $item['cost'];
+									$minName = $item['name'];
+									$minTime1 = $item['time1'];
+									$minTime2 = $item['time2'];
+									$minType = $item['type_journey'];
+									$minFlight = $item['codes_flight'];
+									$minCrypt = $item['crypt'];
+								}
+								else {
+									if($minCost > $item['cost']){
+										$minCost = $item['cost'];
+										$minName = $item['name'];
+										$minTime1 = $item['time1'];
+										$minTime2 = $item['time2'];
+										$minType = $item['type_journey'];
+										$minFlight = $item['codes_flight'];
+										$minCrypt = $item['crypt'];	
+									}
+								}
+								$i++;
+							}
+						}
+						echo "<tr>";
+						echo "<td style='display: none;'>";
+						echo $minName;
+						echo "</td>";
+						echo "<td>";
+						echo "<img src='" . URL . "/public/images/VNairlines_logo.png' />";
+						echo "</td>";
+						echo "<td>";
+						echo $minTime1;
+						echo "</td>";
+						echo "<td>";
+						echo $minTime2;
+						echo "</td>";
+						echo "<td>";
+						echo $minCost;
+						echo "</td>";
+						echo "<td>";
+						echo $minType;
+						echo "</td>";
+						echo "<td>";
+						echo $minFlight;
+						echo "</td>";
+						echo "<td Style='display: none;'>";
+						echo $minCrypt;
+						echo "</td>";
+						echo "<td>";
+						echo "<input type='radio' name='chooseGo' value='" . $minName ."|". $minTime1 ."|". $minTime2 ."|". $minCost ."|". $minType ."|". $minFlight ."|". $minCrypt . "' />";
+						echo "</td>";
+						echo "</tr>";
+					}
+					?>
+				</table>
+				</div>
+				<?php
+				if(Session::get('loaiVe')==1){
+				?>
+				<div class="table-responsive">
+					<strong class="text-danger"><?php echo Session::get('desName'); ?></strong> 
+					<strong class="text-muted"><i class="fa fa-arrow-right"></i></strong> 
+					<strong class="text-danger"><?php echo Session::get('oriName'); ?></strong>
+				<table class="table table-striped table-hover table-responsive alert-danger">
+					<tr>
+						<th>Hãng</th>
+						<th>Khởi hành</th>
+						<th>Đến nơi</th>
+						<th>Giá</th>
+						<th>Hạng vé</th>
+						<th>Chuyến bay</th>
+						<th>chọn</th>
+					</tr>
+					<?php
+					$i = 1;
+					$minCost = null;
+					$minName = null;
+					$minTime1 = null;
+					$minTime2 = null;
+					$minType = null;
+					$minFlight = null;
+					$minCrypt = null;
+					if (isset($this -> json)) {
+
+						foreach ($this->json as $item) {
+							if ($item['trangthai'] == 1) {
+								if($minCost == null)
+								{
+									$minCost = $item['cost'];
+									$minName = $item['name'];
+									$minTime1 = $item['time1'];
+									$minTime2 = $item['time2'];
+									$minType = $item['type_journey'];
+									$minFlight = $item['codes_flight'];
+									$minCrypt = $item['crypt'];
+								}
+								else {
+									if($minCost > $item['cost']){
+										$minCost = $item['cost'];
+										$minName = $item['name'];
+										$minTime1 = $item['time1'];
+										$minTime2 = $item['time2'];
+										$minType = $item['type_journey'];
+										$minFlight = $item['codes_flight'];
+										$minCrypt = $item['crypt'];	
+									}
+								}
+								$i++;
+							}
+						}
+						echo "<tr>";
+						echo "<td style='display: none;'>";
+						echo $minName;
+						echo "</td>";
+						echo "<td>";
+						echo "<img src='" . URL . "/public/images/VNairlines_logo.png' />";
+						echo "</td>";
+						echo "<td>";
+						echo $minTime1;
+						echo "</td>";
+						echo "<td>";
+						echo $minTime2;
+						echo "</td>";
+						echo "<td>";
+						echo $minCost;
+						echo "</td>";
+						echo "<td>";
+						echo $minType;
+						echo "</td>";
+						echo "<td>";
+						echo $minFlight;
+						echo "</td>";
+						echo "<td Style='display: none;'>";
+						echo $minCrypt;
+						echo "</td>";
+						echo "<td>";
+						echo "<input type='radio' name='chooseBack' value='" . $minName ."|". $minTime1 ."|". $minTime2 ."|". $minCost ."|". $minType ."|". $minFlight ."|". $minCrypt . "' />";
+						echo "</td>";
+						echo "</tr>";
+					}
+					?>
+				</table>
+				</div>
+				<?php
+				}
+				?>
 				<div class="alert-success thumbnail">
 					<h5 class="text-danger"><strong>Vé máy bay chiều:</strong>
 						<strong class=""><?php echo Session::get('oriName'); ?></strong> <strong><i class="fa fa-arrow-right"></i></strong> <strong class=""><?php echo Session::get('desName'); ?></strong>
@@ -215,6 +392,7 @@
 						<input type="hidden" name="_codeFlight1" id="_codeFlight1" />
 						<input type="hidden" name="_crypt1" id="_crypt1" />
 						
+						<input type="hidden" name="_bName" id="_bName" />
 						<input type="hidden" name="_timeBack1" id="_timeBack1" />
 						<input type="hidden" name="_timeBack2" id="_timeBack2" />
 						<input type="hidden" name="_cost2" id="_cost2" />

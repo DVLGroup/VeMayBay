@@ -7,7 +7,7 @@ class Session {
 		$_SESSION['start'] = time();
 
 		if (!isset($_SESSION['expire'])) {
-			$_SESSION['expire'] = $_SESSION['start'] + (10 * 60);
+			$_SESSION['expire'] = $_SESSION['start'] + (15 * 60);
 			// ending a session in 10 mins
 		}
 		$now = time();
@@ -29,7 +29,7 @@ class Session {
 
 	public static function destroy() {
 		//unset($_SESSION);
-		session_destroy();
+		@session_destroy();
 	}
 
 }

@@ -42,6 +42,7 @@ $(document).ready(function() {
 		tongCong = tongLon + tongTre + tongSoSinh;
 		$(".addBack").remove();
 		$(this).parent().parent().after("<tr class='addBack alert-info'>" + "<td><strong>Hành khách<hr/><p>Người lớn</p><p>Trẻ em</p><p>Sơ sinh</p><p class='text-danger'>Tổng cộng</p></strong></td>" + "<td><strong>Số lượng<hr/></strong><p>" + nguoiLon + "</p><p>" + treEm + "</p><p>" + soSinh + "</p></td>" + "<td><strong>Giá mỗi vé<hr/></strong><p>" + arr[3] + "</p><p>" + arr[3] + "</p><p>0</p></td>" + "<td colspan=2><strong>Thuế & phí/vé<hr/></strong></td>" + "<td><strong>Tổng giá<hr/></strong><p>" + tongLon + "</p><p>" + tongTre + "</p><p>" + tongSoSinh + "</p><p class='text-danger'><strong>" + tongCong + "</strong></p></td>" + "<td>&nbsp</td>" + "</tr>");
+		$("#_bName").val(arr[0]);
 		$("#_timeBack1").val(arr[1]);
 		$("#_timeBack2").val(arr[2]);
 		$("#_cost2").val(arr[3]);
