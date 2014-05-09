@@ -28,7 +28,7 @@
 	</div>
 	<!--<?php echo Session::get('total').Session::get('aName').Session::get('codeFlight1').Session::get('hangVe2').Session::get('crypt2');?>
 	!-->
-	<form class="form-horizontal" action="" method="post" id="management">
+	<form class="form-horizontal" action="<?php echo URL; ?>xacnhan/getSession" method="post" id="management">
 	<div class="col-sm-12 well">
 		<div class="row">
 			<div class="col-sm-12">
@@ -181,6 +181,8 @@
 					<div class="form-group">
 						<p class="col-sm-offset-2 col-sm-2">Hành lý ký gửi: </p>
 						<p class="col-sm-8"><strong><?php echo $this->hanhLyDi[0]['hanh_ly_name'] ?></strong></p>
+						<input type="hidden" name="hanhLyDi" value="<?php echo $this->hanhLyDi[0]['hanh_ly_id'] ?>" />
+						<input type="hidden" name="giaHanhLyDi" value="<?php echo $this->hanhLyDi[0]['gia_hanh_ly'] ?>" />
 					</div>
 					<hr class="alert-info" />
 					<div class="form-group">
@@ -193,6 +195,8 @@
 					<div class="form-group">
 						<p class="col-sm-offset-2 col-sm-2">Hành lý ký gửi: </p>
 						<p class="col-sm-8"><strong><?php echo $this->hanhLyVe[0]['hanh_ly_name'] ?></strong></p>
+						<input type="hidden" name="hanhLyVe" value="<?php echo $this->hanhLyVe[0]['hanh_ly_id'] ?>" />
+						<input type="hidden" name="giaHanhLyVe" value="<?php echo $this->hanhLyVe[0]['gia_hanh_ly'] ?>" />
 					</div>
 					<hr class="alert-info" />
 				<?php
@@ -208,6 +212,8 @@
 					<div class="form-group">
 						<p class="col-sm-offset-2 col-sm-2">Hành lý ký gửi: </p>
 						<p class="col-sm-8"><strong><?php echo $this->hanhLyDi[0]['hanh_ly_name'] ?></strong></p>
+						<input type="hidden" name="hanhLyDi" value="<?php echo $this->hanhLyDi[0]['hanh_ly_id'] ?>" />
+						<input type="hidden" name="giaHanhLyDi" value="<?php echo $this->hanhLyDi[0]['gia_hanh_ly'] ?>" />
 					</div>
 					<hr class="alert-info" />
 				<?php
@@ -250,7 +256,7 @@
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Địa chỉ</label>
 					<div class="col-sm-3">
-						<input type="text" class="form-control required" name="hoTen" value="" />
+						<input type="text" class="form-control required" name="dChi" value="" />
 					</div>
 					<label class="col-sm-2 control-label">Quốc gia</label>
 					<div class="col-sm-3">
@@ -271,32 +277,50 @@
 				</div>
 				<hr class="alert-info" />
 				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-2">
+					<div class="col-sm-offset-2 col-sm-3">
 						<div class="radio">
 							<label>
-								<input type="radio" name="chuyenKhoan" checked="checked" value="1" />
+								<input id="chuyenKhoan" type="radio" name="chuyenKhoan" checked="checked" value="1" />
 								Chuyển khoản.
 							</label>
 						</div>
 						<div class="radio">
 							<label>
-								<input type="radio" name="chuyenKhoan" value="2" />
+								<input id="vanPhong" type="radio" name="chuyenKhoan" value="2" />
 								Tại văn phòng.
 							</label>
 						</div>
 						<div class="radio">
 							<label>
-								<input type="radio" name="chuyenKhoan" value="3" />
+								<input id="taiNha" type="radio" name="chuyenKhoan" value="3" />
 								Thanh toán tại nhà.
 							</label>
 						</div>
 						<hr class="alert-info" />
 					</div>
-					<div class="col-sm-8">
+					<div id="CTChuyenKhoan" class="col-sm-7">
 						<p><strong>Ngân hàng TMCP Ngoại thương Việt Nam</strong></p>
 						<p>Tên tài khoản: Công ty CP Đầu Tư – VNA</p>
 						<p>Số tài khoản: 0071 00077 6789</p>
 						<p>Chi nhánh: TP.HCM</p>
+					</div>
+					
+					<div id="CTVanPhong" class="col-sm-7" style="display: none;">
+						<p><strong>Văn phòng Công ty CP Đầu Tư – VNA</strong></p>
+						<p>Địa chỉ: 23/9 Phan Đăng Lưu, Phường 3, Q.BT, TP. HCM.</p>
+						<p>Điện thoại: (08) 7301 5888.</p>
+						<p>Di động: 0909 68 3438.</p>
+					</div>
+					
+					<div id="CTTaiNha" class="col-sm-7" style="display: none;">
+						<p><strong>VNA giao vé tận nơi trong phạm vi TP.HCM</strong></p>
+						<p>Khách hàng sẽ đóng thêm một khoản phí vận chuyển 30.000 Đồng (tùy theo lộ trình xa gần).</p>
+					</div>
+					<div class="col-sm-12">
+						<button type="submit" class="btn btn-lg btn-block btn-info">
+							<i class="fa fa-search"></i>
+							Tiếp tục
+						</button>
 					</div>
 				</div>
 			</div>

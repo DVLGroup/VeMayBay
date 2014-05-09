@@ -55,7 +55,7 @@
 					$minType = null;
 					$minFlight = null;
 					$minCrypt = null;
-					if (isset($this -> json)) {
+					if (isset($this -> json) && $this -> json != null) {
 
 						foreach ($this->json as $item) {
 							if ($item['trangthai'] == 0) {
@@ -142,8 +142,7 @@
 					$minType = null;
 					$minFlight = null;
 					$minCrypt = null;
-					if (isset($this -> json)) {
-
+					if (isset($this -> json)&& $this -> json != null) {
 						foreach ($this->json as $item) {
 							if ($item['trangthai'] == 1) {
 								if($minCost == null)

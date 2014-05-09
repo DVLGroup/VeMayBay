@@ -7,6 +7,7 @@ class thongtinkh extends Controller {
 
 	function __construct() {
 		parent::__construct();
+		$this -> view -> js = array('Views/thongtinkh/js/custom.js');
 	}
 
 	function index() {
