@@ -9,11 +9,16 @@ $(document).ready(function() {
 		arr = data.split('|');
 		//alert(arr[3]);
 		tongLon = nguoiLon * arr[3];
-		tongTre = treEm * arr[3];
-		tongSoSinh = soSinh * 0;
+		tongTre = treEm * Math.round((arr[3] *75/100)/1000)*1000;
+		tongSoSinh = soSinh * Math.round((arr[3] *10/100)/1000)*1000;
 		tongCong = tongLon + tongTre + tongSoSinh;
 		$(".addGo").remove();
-		$(this).parent().parent().after("<tr class='addGo alert-info'>" + "<td><strong>Hành khách<hr/><p>Người lớn</p><p>Trẻ em</p><p>Sơ sinh</p><p class='text-danger'>Tổng cộng</p></strong></td>" + "<td><strong>Số lượng<hr/></strong><p>" + nguoiLon + "</p><p>" + treEm + "</p><p>" + soSinh + "</p></td>" + "<td><strong>Giá mỗi vé<hr/></strong><p>" + arr[3] + "</p><p>" + arr[3] + "</p><p>0</p></td>" + "<td colspan=2><strong>Thuế & phí/vé<hr/></strong></td>" + "<td><strong>Tổng giá<hr/></strong><p>" + tongLon + "</p><p>" + tongTre + "</p><p>" + tongSoSinh + "</p><p class='text-danger'><strong>" + tongCong + "</strong></p></td>" + "<td>&nbsp</td>" + "</tr>");
+		$(this).parent().parent().after("<tr class='addGo alert-info'>" + 
+		"<td><strong>Hành khách<hr/><p>Người lớn</p><p>Trẻ em</p><p>Sơ sinh</p><p class='text-danger'>Tổng cộng</p></strong></td>" + 
+		"<td><strong>Số lượng<hr/></strong><p>" + nguoiLon + "</p><p>" + treEm + 
+		"</p><p>" + soSinh + "</p></td>" + "<td><strong>Giá mỗi vé<hr/></strong><p>" + arr[3] + "</p><p>" + Math.round((arr[3] *75/100)/1000)*1000 + "</p><p>"+ Math.round((arr[3] *10/100)/1000)*1000 +"</p></td>" + 
+		"<td colspan=2><strong>Thuế & phí/vé<hr/></strong></td>" + "<td><strong>Tổng giá<hr/></strong><p>" + tongLon + "</p><p>" + tongTre + 
+		"</p><p>" + tongSoSinh + "</p><p class='text-danger'><strong>" + tongCong + "</strong></p></td>" + "<td>&nbsp</td>" + "</tr>");
 		$("#_aName").val(arr[0]);
 		$("#_timeGo1").val(arr[1]);
 		$("#_timeGo2").val(arr[2]);
@@ -37,11 +42,19 @@ $(document).ready(function() {
 		arr = data.split('|');
 		//alert(arr[3]);
 		tongLon = nguoiLon * arr[3];
-		tongTre = treEm * arr[3];
-		tongSoSinh = soSinh * 0;
+		tongTre = treEm * Math.round((arr[3] *75/100)/1000)*1000;
+		tongSoSinh = soSinh * Math.round((arr[3] *10/100)/1000)*1000;
 		tongCong = tongLon + tongTre + tongSoSinh;
 		$(".addBack").remove();
-		$(this).parent().parent().after("<tr class='addBack alert-info'>" + "<td><strong>Hành khách<hr/><p>Người lớn</p><p>Trẻ em</p><p>Sơ sinh</p><p class='text-danger'>Tổng cộng</p></strong></td>" + "<td><strong>Số lượng<hr/></strong><p>" + nguoiLon + "</p><p>" + treEm + "</p><p>" + soSinh + "</p></td>" + "<td><strong>Giá mỗi vé<hr/></strong><p>" + arr[3] + "</p><p>" + arr[3] + "</p><p>0</p></td>" + "<td colspan=2><strong>Thuế & phí/vé<hr/></strong></td>" + "<td><strong>Tổng giá<hr/></strong><p>" + tongLon + "</p><p>" + tongTre + "</p><p>" + tongSoSinh + "</p><p class='text-danger'><strong>" + tongCong + "</strong></p></td>" + "<td>&nbsp</td>" + "</tr>");
+		$(this).parent().parent().after("<tr class='addBack alert-info'>" + 
+		"<td><strong>Hành khách<hr/><p>Người lớn</p><p>Trẻ em</p><p>Sơ sinh</p><p class='text-danger'>Tổng cộng</p></strong></td>" + 
+		"<td><strong>Số lượng<hr/></strong><p>" + nguoiLon + "</p><p>" + treEm + 
+		"</p><p>" + soSinh + "</p></td>" + "<td><strong>Giá mỗi vé<hr/></strong><p>" + arr[3] + 
+		"</p><p>" + Math.round((arr[3] *75/100)/1000)*1000 + "</p><p>" + Math.round((arr[3] *10/100)/1000)*1000 + 
+		"</p></td>" + "<td colspan=2><strong>Thuế & phí/vé<hr/></strong></td>" + 
+		"<td><strong>Tổng giá<hr/></strong><p>" + tongLon + "</p><p>" + tongTre + 
+		"</p><p>" + tongSoSinh + "</p><p class='text-danger'><strong>" + tongCong + 
+		"</strong></p></td>" + "<td>&nbsp</td>" + "</tr>");
 		$("#_bName").val(arr[0]);
 		$("#_timeBack1").val(arr[1]);
 		$("#_timeBack2").val(arr[2]);

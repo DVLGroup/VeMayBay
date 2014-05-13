@@ -21,11 +21,9 @@
 	</div>
 	<div class="col-sm-12 well">
 		<div class="row">
-			<div class="col-sm-12">
-				<div class="form-group">
-					<h3 class="col-sm-12 text-danger"><strong> Thông tin hành trình </strong></h3>
-				</div>
-			</div>
+		<div class="col-sm-offset-1 col-sm-10 thumbnail" style="padding: 30px;">
+		<div class="row">
+			<h3 class="col-sm-12 text-orange"><strong> Thông tin hành trình </strong></h3>
 			<?php if(Session::get('loaiVe') == 1){ ?>
 			<div class="col-sm-6">
 				<table class="table table-responsive table-hover table-striped">
@@ -64,9 +62,10 @@
 					</tr>
 				</table>
 				<hr class="alert-info" />
+				<br />
 			</div>
-			<?php }else {?>
-				<div class="col-sm-offset-2 col-sm-8">
+			<?php }else { ?>
+				<div class="col-sm-offset-1 col-sm-10">
 				<table class="table table-responsive table-hover table-striped">
 					<tr class="alert alert-success">
 						<th>Chuyến bay</th>
@@ -84,11 +83,12 @@
 					</tr>
 				</table>
 				<hr class="alert-info" />
+				<br />
 			</div>
-			<?php }?>
+			<?php } ?>
 			<div class="col-sm-6">
 				<div class="row">
-				<h3 class="col-sm-12 text-danger"><strong> Thông tin hành khách </strong></h3>
+				<h3 class="col-sm-12 text-orange"><strong> Thông tin hành khách </strong></h3>
 					<div class="col-sm-12 ">
 						<table class="table table-responsive table-hover table-striped">
 							<tr class="alert alert-success">
@@ -99,40 +99,41 @@
 					for($i=1;$i<=Session::get('nguoiLon');$i++){
 						?>
 						<tr>
-							<td><?php echo Session::get("nguoiLon".$i); ?></td>
-							<td><?php echo Session::get("tuoiNguoiLon".$i); ?></td>
+							<td><?php echo Session::get("nguoiLon" . $i); ?></td>
+							<td><?php echo Session::get("tuoiNguoiLon" . $i); ?></td>
 						</tr>
 						<?php
-					}
+						}
 					?>
 			
 					<?php
 					for($i=1;$i<=Session::get('treEm');$i++){
 						?>
 						<tr>
-							<td><?php echo Session::get("treEm".$i); ?></td>
-							<td><?php echo Session::get("tuoiTreEm".$i); ?></td>
+							<td><?php echo Session::get("treEm" . $i); ?></td>
+							<td><?php echo Session::get("tuoiTreEm" . $i); ?></td>
 						</tr>
 						<?php
-					}
+						}
 					?>
 			
 					<?php
 					for($i=1;$i<=Session::get('soSinh');$i++){
 						?>
 						<tr>
-							<td><?php echo Session::get("soSinh".$i); ?></td>
-							<td><?php echo Session::get("tuoiSoSinh".$i); ?></td>
+							<td><?php echo Session::get("soSinh" . $i); ?></td>
+							<td><?php echo Session::get("tuoiSoSinh" . $i); ?></td>
 						</tr>
 						<?php
-					}
+						}
 					?>
 						</table>
 						<hr class="alert-info" />
+						<br />
 					</div>
 					<div class="col-sm-12">
 						<div class="row">
-							<h3 class="col-sm-12 text-danger"><strong> Thông tin liên lạc </strong></h3>
+							<h3 class="col-sm-12 text-orange"><strong> Thông tin liên lạc </strong></h3>
 							<label class="col-sm-3">Ông/Bà:</label>
 							<p class="col-sm-9"><?php echo Session::get('hoTen'); ?></p>
 							<label class="col-sm-3">Số ĐT:</label>
@@ -145,12 +146,13 @@
 							</p>		
 						</div>	
 						<hr class="alert-info" />
+						<br />
 					</div>
 				</div>
 			</div>
 			<div class="col-sm-6">
 				<div class="row">
-				<h3 class="col-sm-12 text-danger"><strong> Thông tin thanh toán </strong></h3>
+				<h3 class="col-sm-12 text-orange"><strong> Thông tin thanh toán </strong></h3>
 				<div class="col-sm-12">
 					<p>NH TMCP Vietcom Bank</p> 
 					<p>Tên tài khoản Giám Đốc: Đỗ Duy Thanh</p>
@@ -163,46 +165,47 @@
 				</div>
 				</div>
 				<hr class="alert-info" />
+				<br />
 			</div>
 			<div class="col-sm-12">
 				<div class="row">
 					<div class="col-sm-6">
 						<div class="row">
-							<h3 class="col-sm-12 text-danger"><strong> Chi tiết giá </strong></h3>
+							<h3 class="col-sm-12 text-orange"><strong> Chi tiết giá </strong></h3>
 							<label class="col-sm-8"><?php echo Session::get('nguoiLon'); ?> X Người lớn, 
 							<?php
-							if(Session::get('treEm')!=0)
-							{
-								echo Session::get('treEm')." X Trẻ em";
+							if (Session::get('treEm') != 0) {
+								echo Session::get('treEm') . " X Trẻ em";
 							}
-							if(Session::get('soSinh')!=0)
-							{
-								echo " ,".Session::get('treEm')." X Bé sơ sinh";
+							if (Session::get('soSinh') != 0) {
+								echo " ," . Session::get('treEm') . " X Bé sơ sinh";
 							}
 							?>
 							</label>
-							<p class="col-sm-4"><?php echo Session::get('total')." Vnđ"; ?></p>
+							<p class="col-sm-4 text-success"><?php echo Session::get('total') . " Vnđ"; ?></p>
 							<label class="col-sm-8">Hành lý ký gửi</label>
 							<?php if(Session::get('loaiVe')==0){?>
-								<p class="col-sm-4"><?php echo Session::get('giaHanhLyDi')." Vnđ"; ?></p>
+								<p class="col-sm-4 text-success"><?php echo Session::get('giaHanhLyDi') . " Vnđ"; ?></p>
 							<?php }else{ ?>
-								<p class="col-sm-4"><?php echo Session::get('giaHanhLyDi')+Session::get('giaHanhLyVe')." Vnđ"; ?></p>
+								<p class="col-sm-4 text-success"><?php echo Session::get('giaHanhLyDi') + Session::get('giaHanhLyVe') . " Vnđ"; ?></p>
 							<?php } ?>
-							<div class="col-sm-12 text-danger">--------------------------------------------------------------------------------------------------</div>					
-							<label class="col-sm-8">Tổng cộng</label>
+							<label class="col-sm-8 text-danger">Tổng cộng</label>
 							<?php if(Session::get('loaiVe')==0){?>
-								<p class="col-sm-4"><?php echo Session::get('total')+Session::get('giaHanhLyDi')." Vnđ"; ?></p>
+								<p class="col-sm-4 text-success"><strong><?php echo Session::get('total') + Session::get('giaHanhLyDi') . " Vnđ"; ?></strong></p>
 							<?php }else{ ?>
-								<p class="col-sm-4"><?php echo Session::get('total')+Session::get('giaHanhLyDi')+Session::get('giaHanhLyVe')." Vnđ"; ?></p>
+								<p class="col-sm-4 text-success"><strong><?php echo Session::get('total') + Session::get('giaHanhLyDi') + Session::get('giaHanhLyVe') . " Vnđ"; ?></strong></p>
 							<?php } ?>
 						</div>
 						<hr class="alert-info" />
+						<br />
 					</div>
 				</div>
 			</div>
 			<div class="col-sm-12">
-				<a href="<?php echo URL; ?>hoantat/index" class="btn btn-lg btn-block btn-info"><i class="fa fa-search"></i>Tiếp tục</a>
+				<a href="<?php echo URL; ?>hoantat/hoantat" class="btn btn-lg btn-block btn-info"><i class="fa fa-search"></i>Tiếp tục</a>
 			</div>
 		</div>
+	</div>
+	</div>
 	</div>
 </div>
