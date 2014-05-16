@@ -9,7 +9,12 @@ class hoantat extends Controller {
 	}
 
 	function index() {
-		$this -> view -> render('hoantat/index', TRUE);
+		if ($_SESSION['check']) {
+			$this -> view -> render('hoantat/index', TRUE);
+			Session::destroy();
+		} else {
+			header("Location:" . URL . "index");
+		}
 	}
 
 	function hoantat() {
@@ -38,7 +43,7 @@ class hoantat extends Controller {
 
 			//sending email
 			$mail = new PHPMailer(TRUE);
-			$mail->CharSet = "UTF-8";
+			$mail -> CharSet = "UTF-8";
 			// create a new object
 			$mail -> IsSMTP();
 			// enable SMTP
@@ -144,7 +149,8 @@ class hoantat extends Controller {
 						$this -> model -> insertCTPhieuDat($dataDetail);
 					}
 				}
-				Session::destroy();
+
+				header("Location:" . URL . "hoantat/index");
 			}
 		} else
 			header("Location:" . URL . "index");
