@@ -1,13 +1,13 @@
 <?php
-	//Config
-	require 'Config/database.php';
-	require 'Config/Paths.php';
-	require 'Config/constant.php';
+
+	require 'config.php';
+	require 'util/Auth.php';
 
 	//autoload libs
 	function __autoload($class){
 		require LIBS . $class .'.php';
 	}
+	
 	require_once 'Libs/class.phpmailer.php';
 	require_once("src/facebook.php");
 

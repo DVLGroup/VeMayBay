@@ -31,9 +31,10 @@ class Database extends PDO {
 	 * insert
 	 * @param string $table A name of table to insert into
 	 * @param string $data An associative array
+	 * @param boolean $get_inserted a get list row inserted
 	 * Vi du: insert('user', array('user_name'=>'admin', 'user_password'=>'1234'))
 	 */
-	public function insert($table, $data)
+	public function insert($table, $data, $get_inserted = FALSE)
 	{
 		ksort($data);
 		
@@ -45,10 +46,34 @@ class Database extends PDO {
 		foreach ($data as $key => $value) {
 			$sth->bindValue(":$key", $value);
 		}
-		
+
 		return $sth->execute();
 	}
 
+	/**
+	 * update
+	 * @param string $table A name of table to insert into
+	 * @param string $data An associative array
+	 * @param string $where the WHERE query part
+	 */
+	public function update($table, $data, $where)
+	{
+		ksort($data);
+		
+		$fieldDetails = NULL;
+		foreach($data as $key=> $value) {
+			$fieldDetails .= "`$key`=:$key,";
+		}
+		$fieldDetails = rtrim($fieldDetails, ',');
+		
+		$sth = $this->prepare("UPDATE $table SET $fieldDetails WHERE $where");
+		
+		foreach ($data as $key => $value) {
+			$sth->bindValue(":$key", $value);
+		}
+		
+		$sth->execute();
+	}
 
 	/**
 	 * delete

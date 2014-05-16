@@ -1,11 +1,3 @@
-<?php
-    Session::init();
-    $isAdmin = Session::get('Admin');
-    if(!$isAdmin)
-    {
-        header('location:' . URL .'admincp');
-    } 
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -15,7 +7,7 @@
         Remove this if you use the .htaccess -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-        <title>Website desktop version</title>
+        <title>Quản lý vé máy bay</title>
         <meta name="description" content="" />
         <meta name="author" content="TrongLoi" />
 
@@ -30,12 +22,15 @@
         <link rel="stylesheet" href="<?php echo URL ?>public/css/admincp/wbbtheme.css"/>
         <link rel="stylesheet" href="<?php echo URL ?>public/css/admincp/jquery.Tables.css"/>
         <link rel="stylesheet" href="<?php echo URL ?>public/css/admincp/style.css"/>
+        <link rel="stylesheet" href="<?php echo URL ?>public/css/admincp/customize-bootstrap.css"/>
 
         <!-- Chèn link JavaScript-->
         <script src="<?php echo URL ?>public/js/jquery.min.js" type="text/javascript"></script>
         <script src="<?php echo URL ?>public/js/bootstrap.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="<?php echo URL; ?>public/js/jquery.validate.min.js"></script>
         <script src="<?php echo URL ?>public/js/admincp/jquery.wysibb.min.js" type="text/javascript"></script>
         <script src="<?php echo URL ?>public/js/admincp/jquery.dataTables.js" type="text/javascript"></script>
+        
         <script>
             $(document).ready(function() {
                 $("#editor").wysibb();
@@ -66,10 +61,19 @@
                     <nav class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="<?php echo URL ?>admincp/vemaybay">Vé Máy Bay</a>
+                                <a href="<?php echo URL ?>admincp/vemaybay">Vé máy bay</a>
                             </li>
                             <li >
                                 <a href="<?php echo URL ?>admincp/datve">Đặt vé</a>
+                            </li>
+                            <li >
+                                <a href="<?php echo URL ?>admincp/hanhly">Hành lý</a>
+                            </li>
+                            <li >
+                                <a href="<?php echo URL ?>admincp/sanbay">Sân bay</a>
+                            </li>
+                            <li >
+                                <a href="<?php echo URL ?>admincp/thanhtoan">Thanh toán</a>
                             </li>
                             <li >
                                 <a href="<?php echo URL ?>admincp/yeucau">Yêu Cầu</a>
