@@ -100,7 +100,7 @@
 						?>
 						<tr>
 							<td><?php echo Session::get("nguoiLon" . $i); ?></td>
-							<td><?php echo Session::get("tuoiNguoiLon" . $i); ?></td>
+							<td><?php $date = date_create(Session::get("tuoiNguoiLon" . $i)); echo date_format($date, 'd/m/Y');  ?></td>
 						</tr>
 						<?php
 						}
@@ -111,7 +111,7 @@
 						?>
 						<tr>
 							<td><?php echo Session::get("treEm" . $i); ?></td>
-							<td><?php echo Session::get("tuoiTreEm" . $i); ?></td>
+							<td><?php $date = date_create(Session::get("tuoiTreEm" . $i)); echo date_format($date, 'd/m/Y');  ?></td>
 						</tr>
 						<?php
 						}
@@ -122,7 +122,7 @@
 						?>
 						<tr>
 							<td><?php echo Session::get("soSinh" . $i); ?></td>
-							<td><?php echo Session::get("tuoiSoSinh" . $i); ?></td>
+							<td><?php $date = date_create(Session::get("tuoiSoSinh" . $i)); echo date_format($date, 'd/m/Y'); ?></td>
 						</tr>
 						<?php
 						}

@@ -14,7 +14,8 @@ class Session {
 		// checking the time now when home page starts
 
 		if ($now > $_SESSION['expire']) {
-			session_destroy();
+			@session_destroy();
+			@session_start();
 		}
 	}
 

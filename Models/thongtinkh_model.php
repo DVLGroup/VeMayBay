@@ -23,4 +23,7 @@ class thongtinkh_model extends Model {
 			return $this->db->select("select * from hanh_ly where hang_bay='".Session::get('bName')."' and gia_bay=4600000");
 		}
 	}
+	function getLaiSuat($hang_bay){
+		return $this->db->select("select * from lai_ban where hang_bay='".$hang_bay."'");
+	}
 }

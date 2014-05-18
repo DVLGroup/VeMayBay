@@ -9,6 +9,7 @@ class xacnhan extends Controller {
 	}
 
 	function index() {
+		Session::init();
 		if ($_SESSION['check']) {
 			$this -> view -> render('xacnhan/index', TRUE);
 		} else {

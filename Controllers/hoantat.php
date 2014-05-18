@@ -9,6 +9,7 @@ class hoantat extends Controller {
 	}
 
 	function index() {
+		Session::init();
 		if ($_SESSION['check']) {
 			$this -> view -> render('hoantat/index', TRUE);
 			Session::destroy();
@@ -61,10 +62,35 @@ class hoantat extends Controller {
 			$mail -> Password = "whatdidyoudo1341996";
 			$mail -> SetFrom("baytructuyen@gmail.com");
 			$mail -> Subject = "Xác nhận thông tin đặt vé từ baytructuyen.com!";
-			$body = "Cám ơn bạn đã đặt vé của baytructuyen.com 
-			<h3 class=''>
+			$body = "Cám ơn Quý Khách đã đặt vé của baytructuyen.com 
+			<div align='center' style='border: 1px solid black;'>
+			<h3 style='color: #300000'>
 				<strong> Thông tin hành trình </strong>
-			</h3>";
+			</h3>
+			<h4 style='color: red'>Chiều đi</h4>
+			<h4>" . Session::get('oriName') . "->" . Session::get('desName') . "<h4> 
+			<h4>Ngày: " . Session::get('dateGo') . "</h4>";
+			if (Session::get('loaiVe') == 1) {
+				$body .= "<h4 style='color: red'>Chiều về</h4><h4>" . Session::get('desName') . "->" . Session::get('oriName') . "<h4> 
+				<h4>Ngày: " . Session::get('dateBack') . "</h4>";
+			}
+			$body .= "<h3 style='color: gray'>Hành Khách</h3>";
+			for($i=1;$i<=Session::get('nguoiLon');$i++){
+				$date = date_create(Session::get('tuoiNguoiLon'.$i));
+				$body .= "<h4>Ông/Bà: ".Session::get('nguoiLon'.$i).", Ngày Sinh: ".date_format($date, 'd/m/Y')."</h4>";
+			}
+			for($i=1;$i<=Session::get('treEm');$i++){
+				$date = date_create(Session::get('tuoiTreEm'.$i));
+				$body .= "<h4>Cháu: ".Session::get('treEm'.$i).", Ngày Sinh: ".date_format($date, 'd/m/Y')."</h4>";
+			}
+			for($i=1;$i<=Session::get('soSinh');$i++){
+				$date = date_create(Session::get('tuoiSoSinh'.$i));
+				$body .= "<h4>Bé: ".Session::get('soSinh'.$i).", Ngày Sinh: ".date_format($date, 'd/m/Y')."</h4>";
+			}
+			$body .= "<h3 style='color: Orange'>Người Liên Hệ</h3>";
+			$body .= "<h4>Họ Tên: ".Session::get('hoTen')."</h4><h4>Điện Thoại: ".Session::get('dThoai')."</h4>";
+			$body .= "<h4>Email: ".Session::get('email')."</h4><h4>Địa Chỉ: ".Session::get('dChi').", ".Session::get('tinhThanh').", ".Session::get('quocGia')."</h4>";
+			$body .= "</div>Quý Khách vui lòng...";
 			$mail -> Body = $body;
 			$mail -> AddAddress($data['email']);
 			if (!$mail -> Send()) {

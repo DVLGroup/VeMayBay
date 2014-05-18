@@ -10,6 +10,7 @@ class chonchuyenbay extends Controller {
 	}
 
 	function index() {
+		Session::init();
 		if (isset($_SESSION['check'])) {
 			$this -> view -> json = json_decode(Session::get('check'), true);
 			// print_r($json);

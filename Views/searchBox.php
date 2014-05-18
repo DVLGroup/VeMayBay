@@ -103,7 +103,15 @@
 			<div class="col-sm-6" style="">
 				<form class="form-horizontal" action="">
 					<div class="form-group">
-						<h3 class="col-sm-12 text-info"><strong> Tìm Giá Vé Tại Đây </strong></h3>
+						<h3 class="col-sm-12 text-info">
+							<strong>
+								<span class="fa-stack fa">
+								<i class="fa fa-ticket fa-stack-2x text-orange"></i>
+								<i class="fa fa-search fa-stack-1x"></i>
+								</span> Tìm Giá Vé Rẻ Tại Đây 
+								<img style="width: 60px; height: 40px" src="<?php echo URL; ?>public/images/paper-plane.png" class="img-circle"/> 
+							</strong>
+						</h3>
 					</div>
 					<hr class="alert-info" />
 					<div class="form-group">
@@ -217,19 +225,19 @@
 					</ol>
 					<div class="carousel-inner">
 						<div class="item active">
-							<img src="<?php echo URL; ?>public/images/Vietjetair.jpg" alt="VietJetAir" style="width:100%;height: 386px" />
+							<img src="<?php echo URL; ?>public/images/Vietjetair.jpg" alt="VietJetAir" style="width:100%;height: 406px" />
 							<div class="carousel-caption">
 								<h2><strong>VietJetAir</strong></h2><h4> Tinh Tế, Nhiệt Tình...</h4>
 							</div>
 						</div>
 						<div class="item">
-							<img src="<?php echo URL; ?>public/images/Vietnam_Airlines.jpg" alt="VNA" style="width:100%; height: 386px" />
+							<img src="<?php echo URL; ?>public/images/Vietnam_Airlines.jpg" alt="VNA" style="width:100%; height: 406px" />
 							<div class="carousel-caption">
 								<h2><strong>VietNam Airline</strong></h2><h4> An Toàn, Chất Lượng...</h4>
 							</div>
 						</div>
 						<div class="item">
-							<img src="<?php echo URL; ?>public/images/Jetstar.jpg" alt="JetStar" style="width:100%; height: 386px" />
+							<img src="<?php echo URL; ?>public/images/Jetstar.jpg" alt="JetStar" style="width:100%; height: 406px" />
 							<div class="carousel-caption">
 								<h2><strong>JetStar</strong></h2><h4> Hợp Lý, Tận Tình...</h4>
 							</div>
