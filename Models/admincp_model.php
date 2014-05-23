@@ -37,6 +37,24 @@
 			exit;
 		}
 
+		///////////////////////////// VE MAY BAY //////////////////////////
+		function getList_veMayBay(){
+			$json = file_get_contents("./DataFile/dbvemaybay.json");
+			$jsonIterator = new RecursiveIteratorIterator(
+			    new RecursiveArrayIterator(json_decode($json, TRUE)),
+			    RecursiveIteratorIterator::SELF_FIRST
+			   );
+
+			foreach ($jsonIterator as $key => $val) {
+			    if(is_array($val)) {
+			        echo "$key:\n";
+			    } else {
+			        echo "$key => $val\n";
+			    }
+			}
+		}
+
+
 		///////////////////////////// HANH LY //////////////////////////
 		function getList_hanhLy(){
 			$query = "SELECT * FROM hanh_ly";
@@ -78,15 +96,16 @@
 			$id = $_POST['edit_hanhLy_id'];
 		
 			$data = array(
-				'hanh_ly_id'		=> $_POST['edit_hanhLy_id'],
-				'hanh_ly_name'		=> $_POST['edit_hanhLy_name'],
-				'hang_bay'			=> $_POST['edit_hangBay'],
-				'gia_bay'			=> $_POST['edit_giaBay'],
-				'gia_hanh_ly'		=> $_POST['edit_giaHanhLy']
+				'hanh_ly_id'	=> $_POST['edit_hanhLy_id'],
+				'hanh_ly_name'	=> $_POST['edit_hanhLy_name'],
+				'hang_bay'		=> $_POST['edit_hangBay'],
+				'gia_bay'		=> $_POST['edit_giaBay'],
+				'gia_hanh_ly'	=> $_POST['edit_giaHanhLy']
 			);
 
 			$sth = $this->db->update('hanh_ly', $data, "hanh_ly_id = '$id'");
-			if( $sth ){
+
+			if( $sth ) {
 				echo 'success';
 			} else {
 				echo 'error';

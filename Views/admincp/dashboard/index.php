@@ -1,1 +1,1 @@
-This is dashboard
+<h1 align="center">Quản lý </h1>

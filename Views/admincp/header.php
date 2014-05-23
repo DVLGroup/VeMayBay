@@ -19,7 +19,6 @@
 
         <!-- Chèn link CSS -->
         <link rel="stylesheet" href="<?php echo URL ?>public/css/bootstrap.min.css" type="text/css"  />
-        <link rel="stylesheet" href="<?php echo URL ?>public/css/admincp/wbbtheme.css"/>
         <link rel="stylesheet" href="<?php echo URL ?>public/css/admincp/jquery.Tables.css"/>
         <link rel="stylesheet" href="<?php echo URL ?>public/css/admincp/style.css"/>
         <link rel="stylesheet" href="<?php echo URL ?>public/css/admincp/customize-bootstrap.css"/>
@@ -27,18 +26,20 @@
         <!-- Chèn link JavaScript-->
         <script src="<?php echo URL ?>public/js/jquery.min.js" type="text/javascript"></script>
         <script src="<?php echo URL ?>public/js/bootstrap.min.js" type="text/javascript"></script>
-        <script type="text/javascript" src="<?php echo URL; ?>public/js/jquery.validate.min.js"></script>
-        <script src="<?php echo URL ?>public/js/admincp/jquery.wysibb.min.js" type="text/javascript"></script>
+        <script src="<?php echo URL ?>public/js/jquery.validate.min.js" type="text/javascript" ></script>
         <script src="<?php echo URL ?>public/js/admincp/jquery.dataTables.js" type="text/javascript"></script>
         
-        <script>
-            $(document).ready(function() {
-                $("#editor").wysibb();
-            })
-        </script>
         <?php
-            if(isset($this->js)){
-                echo '<script type="text/javascript" src="'. $this->js .'"></script>';
+            if(isset($this->style)){
+                foreach ($this->style as $style) {
+                    echo '<link rel="stylesheet" type="text/css" href="'. $style .'" />';
+                }
+            }
+            
+            if(isset($this->script)){
+                foreach ($this->script as $script) {
+                    echo '<script type="text/javascript" src="'. $script .'" ></script>';
+                }
             }
         ?>
     </head>
@@ -46,7 +47,7 @@
     <body>
         <header>
             <!-------------------------------------------------- Navbar -------------------------------------------------->
-            <div class="navbar navbar-inverse">
+            <div class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="navigation">
                 <div class="container" >
                     <div class="navbar-header">
                         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
@@ -60,7 +61,7 @@
                     </div>
                     <nav class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
-                            <li >
+                            <li>
                                 <a href="<?php echo URL ?>admincp/vemaybay">Vé máy bay</a>
                             </li>
                             <li >

@@ -1,13 +1,13 @@
 
 
-<h1 align="center">Quản lý Hành lý</h1>
+<h1 align="center">Quản lý hình thức thanh toán</h1>
 
 <div class="container" style="margin-top: 50px">
 	<!-- Thêm -->
 	<div>
 		<h4>
 			<a class="abc" data-toggle="collapse" href="#addUser">
-				<i class="glyphicon glyphicon-plus"></i> Thêm Hành lý
+				<i class="glyphicon glyphicon-plus"></i> Thêm thanh toán
 			</a>
 		</h4>
 		

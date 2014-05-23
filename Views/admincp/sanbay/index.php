@@ -11,7 +11,7 @@
 			</a>
 		</h4>
 		
-		<div id="addUser" class="panel-collapse collapse" style="width: 600px; margin: 10px auto;">
+		<div id="addUser" class="panel-collapse collapse" style="width: 400px; margin: 10px auto;">
 			<form id="insert_sanBay" action="sanbay/xhrInsert" method="POST">
 				<div class="row">
 					<div align="center" style="height:30px;">
@@ -20,7 +20,7 @@
 						<h4 class="status loading text-primary">...Loading...</h4>
 					</div>
 					
-					<div class="col-md-7">
+					<div class="col-md-12">
 						<div class="form-group" >
 							<label for="san_bay_code">Mã sân bay: </label>
 							<input id="san_bay_code" type="text" class="form-control" name="san_bay_code" placeHolder="Nhập tên mã sân bay" pattern=".{3,}" required />
@@ -75,7 +75,7 @@
 
 	<!-- Modal Edit -->
 	<div class="modal fade" id="editSanBay_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
-	  <div class="modal-dialog">
+	  <div class="modal-dialog" style="width: 400px;">
 	    <div class="modal-content">
 	      <form id="update_sanBay" action="sanbay/xhrUpdate" method="POST">
 		      <div class="modal-header">
@@ -88,7 +88,7 @@
 					<h4 class="status error text-danger">Error</h4>
 					<h4 class="status loading text-primary">...Loading...</h4>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-12">
 			    	<div class="form-group">
 			    		<label for="edit_sanBay_id">Mã sân bay: </label>
 			    		<input id="edit_sanBay_id" type="text" class="form-control" name="edit_sanBay_id" readonly />

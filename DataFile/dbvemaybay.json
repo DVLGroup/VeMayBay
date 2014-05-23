@@ -3,15 +3,15 @@
 
 
 // {
-// 	"name":"vietjetair",
-// 	"trangthai":"0",
-// 	"time1":"06:00",
-// 	"Origin":"Ho Chi Minh",
-// 	"time2":"08:05",
-// 	"Destination":"Ha Noi",
-// 	"type_journey":"Eco",
-// 	"cost":"1140000",
-// 	"codes_flight":"VJ8660",
+// 	"name":"vietjetair", 		// Tên hãng
+// 	"trangthai":"0",			// Trạng thái đặt
+// 	"time1":"06:00",			// Giờ cất cánh
+// 	"Origin":"Ho Chi Minh",		// Điểm xuất phát
+// 	"time2":"08:05",			// Giờ hạ cánh
+// 	"Destination":"Ha Noi",		// Điểm đến
+// 	"type_journey":"Eco",		// Hạng vé
+// 	"cost":"1140000",			// Giá mỗi vé
+// 	"codes_flight":"VJ8660",	// Mã chuyến bay
 // 	"crypt":"VNA#ZmQH91Osq01Jw7Mwqtze4sbDeuzmLoPisw9WV6wl25EMxZaoFHIjeDHjYsyoJOXB9vC7+rx0MOpVAJKru+DvHf7ZqBvfkY8FnmD5ri1StMdfWEuW5tHrAthY+NpR0iyE"
 // },
 

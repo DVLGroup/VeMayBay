@@ -20,7 +20,26 @@ class Admincp extends Controller {
 
 	function vemaybay( $xhr = false ) {
 		Auth::handleLogin();
-		$this->view->render_admin('vemaybay/index');
+		$this->view->script = array(
+			URL . 'Views/admincp/vemaybay/js/default.js'
+			,URL . 'public/js/admincp/bootstrap-datepicker.js'
+			,URL . 'public/js/admincp/moment.min.js'
+			,URL . 'public/js/admincp/daterangepicker.js'
+			,URL . 'public/js/admincp/app.js'
+			,URL . 'public/js/admincp/components-pickers.js'
+		);
+
+		$this->view->style = array(
+			URL . 'public/css/admincp/datepicker.css'
+			,URL . 'public/css/admincp/daterangepicker-bs3.css'
+		);
+
+		if($xhr == 'xhrGetListings'){
+			$this->model->getList_veMayBay();
+		}
+		else {
+			$this->view->render_admin('vemaybay/index');
+		}
 	}
 
 	function datve( $xhr = false ) {
@@ -30,13 +49,13 @@ class Admincp extends Controller {
 
 	function hanhly( $xhr = false ) {
 		Auth::handleLogin();
-		$this->view->js = URL . 'Views/admincp/hanhly/js/default.js';
+		$this->view->script = array( URL . 'Views/admincp/hanhly/js/default.js' );
 		if($xhr == 'xhrGetListings'){
 			$this->model->getList_hanhLy();
 		}
 		elseif($xhr == 'xhrInsert'){
 			$this->model->insert_hanhLy();
-		} 
+		}
 		elseif($xhr == 'xhrUpdate'){
 			$this->model->update_hanhLy();
 		}
@@ -50,7 +69,7 @@ class Admincp extends Controller {
 	
 	function sanbay( $xhr = false ) {
 		Auth::handleLogin();
-		$this->view->js = URL . 'Views/admincp/sanbay/js/default.js';
+		$this->view->script = array( URL . 'Views/admincp/sanbay/js/default.js' );
 		if($xhr == 'xhrGetListings'){
 			$this->model->getList_sanBay();
 		}
@@ -70,12 +89,12 @@ class Admincp extends Controller {
 
 	function thanhtoan( $xhr = false ) {
 		Auth::handleLogin();
-		$this->view->render_admin('vemaybay/index');
+		$this->view->render_admin('thanhtoan/index');
 	}
 
 	function yeucau( $xhr = false ) {
 		Auth::handleLogin();
-		$this->view->js = URL . 'Views/admincp/yeucau/js/default.js';
+		$this->view->script = array( URL . 'Views/admincp/yeucau/js/default.js' );
 		if($xhr == 'xhrGetListings'){
 			$this->model->getList_YeuCau();
 		} 
@@ -96,7 +115,7 @@ class Admincp extends Controller {
 
 	function user($xhr = false) {
 		Auth::handleLogin();
-		$this->view->js = URL . 'Views/admincp/user/js/default.js';
+		$this->view->script = array( URL . 'Views/admincp/user/js/default.js' );
 		if($xhr == 'xhrGetListings'){
 			$this->model->getList_User();
 		}
