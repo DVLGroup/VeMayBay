@@ -38,6 +38,19 @@ class yeucau extends Controller {
 		if (isset($_POST['quaMail'])) {
 			$data['gui_qua_mail'] = 1;
 		}
+		//Gửi Mail trên host
+		// $too = $data['email'];
+		// $subject = "Cảm ơn bạn đã gửi yêu cầu đến baytructuyen.com";
+		// $message = "Yêu cầu của bạn đang được xem xét.<br/>Khi nào có kết quả chúng tôi sẽ liên lạc với bạn.<br/>Chân thành cám ơn!";
+		// $user_email = ""; // valid POST email address 
+		// $headers  = "From: $user_email\r\n";
+		// $headers .= "Reply-To: $too\r\n";
+		// $headers .= "Return-Path: $too\r\n";
+		// $headers .= "X-Mailer: PHP/" . phpversion(). "\r\n";
+		// $headers .= 'MIME-Version: 1.0' . "\n";
+		// $headers .= 'Content-type: text/html; UTF-8' . "\r\n";
+		// if(mail($too,$subject,$message,$headers)) echo 'SENT';  
+		//Gửi Mail local
 		$this -> model -> send($data);//Chuyển hàm send vào (1) để tránh email ko tồn tại
 		//sending email
 		$mail = new PHPMailer();
@@ -65,6 +78,7 @@ class yeucau extends Controller {
 		} else {
 			echo "Message has been sent";
 		}
+		//
 		header('Location:' . URL . 'yeucau');
 	}
 
