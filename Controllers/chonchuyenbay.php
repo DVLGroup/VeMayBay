@@ -28,7 +28,8 @@ class chonchuyenbay extends Controller {
 			// if (!isset($_POST['jsonFile']) && !isset($_POST['oriName']) && !isset($_POST['desName']) && !isset($_POST['dateGo']) && !isset($_POST['dateBack'])) {
 				// header('Location:' . URL . 'index');
 			// }
-			Session::set('check', $_POST['jsonFile']);
+			$good = str_replace('\"','"',$_POST['jsonFile']);
+			Session::set('check', $good);
 			Session::set('oriName', $_POST['oriName']);
 			Session::set('desName', $_POST['desName']);
 			Session::set('ori', $_POST['ori']);
