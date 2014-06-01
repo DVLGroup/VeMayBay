@@ -42,7 +42,7 @@ class yeucau extends Controller {
 		// $too = $data['email'];
 		// $subject = "Cảm ơn bạn đã gửi yêu cầu đến baytructuyen.com";
 		// $message = "Yêu cầu của bạn đang được xem xét.<br/>Khi nào có kết quả chúng tôi sẽ liên lạc với bạn.<br/>Chân thành cám ơn!";
-		// $user_email = ""; // valid POST email address 
+		// $user_email = "baytructuyen"; // valid POST email address 
 		// $headers  = "From: $user_email\r\n";
 		// $headers .= "Reply-To: $too\r\n";
 		// $headers .= "Return-Path: $too\r\n";
@@ -50,9 +50,8 @@ class yeucau extends Controller {
 		// $headers .= 'MIME-Version: 1.0' . "\n";
 		// $headers .= 'Content-type: text/html; UTF-8' . "\r\n";
 		// if(mail($too,$subject,$message,$headers)) echo 'SENT';  
-		//Gửi Mail local
 		$this -> model -> send($data);//Chuyển hàm send vào (1) để tránh email ko tồn tại
-		//sending email
+		//Gửi Mail local
 		$mail = new PHPMailer();
 		// create a new object
 		$mail -> IsSMTP();
