@@ -39,45 +39,45 @@ class yeucau extends Controller {
 			$data['gui_qua_mail'] = 1;
 		}
 		//Gửi Mail trên host
-		// $too = $data['email'];
-		// $subject = "Cảm ơn bạn đã gửi yêu cầu đến baytructuyen.com";
-		// $message = "Yêu cầu của bạn đang được xem xét.<br/>Khi nào có kết quả chúng tôi sẽ liên lạc với bạn.<br/>Chân thành cám ơn!";
-		// $user_email = "baytructuyen"; // valid POST email address 
-		// $headers  = "From: $user_email\r\n";
-		// $headers .= "Reply-To: $too\r\n";
-		// $headers .= "Return-Path: $too\r\n";
-		// $headers .= "X-Mailer: PHP/" . phpversion(). "\r\n";
-		// $headers .= 'MIME-Version: 1.0' . "\n";
-		// $headers .= 'Content-type: text/html; UTF-8' . "\r\n";
-		// if(mail($too,$subject,$message,$headers)) echo 'SENT';  
-		$this -> model -> send($data);//Chuyển hàm send vào (1) để tránh email ko tồn tại
-		//Gửi Mail local
-		$mail = new PHPMailer();
-		// create a new object
-		$mail -> IsSMTP();
-		// enable SMTP
-		$mail -> SMTPDebug = 1;
-		// debugging: 1 = errors and messages, 2 = messages only
-		$mail -> SMTPAuth = true;
-		// authentication enabled
-		$mail -> SMTPSecure = 'ssl';
-		// secure transfer enabled REQUIRED for GMail
-		$mail -> Host = "smtp.gmail.com";
-		$mail -> Port = 465;
-		// or 587
-		$mail -> IsHTML(true);
-		$mail -> Username = "vietnt134@gmail.com";
-		$mail -> Password = "whatdidyoudo1341996";
-		$mail -> SetFrom("BayTrucTuyen@gmail.com");
-		$mail -> Subject = "Hello Mr Bean";
-		$mail -> Body = "Hello im from BayTrucTuyen.com <hr/>";
-		$mail -> AddAddress($data['email']);
-		if (!$mail -> Send()) {
-			echo "Mailer Error: " . $mail -> ErrorInfo;//(1)
-		} else {
-			echo "Message has been sent";
-		}
+		$too = $data['email'];
+		$subject = "Cảm ơn bạn đã gửi yêu cầu đến baytructuyen.com";
+		$message = "Yêu cầu của bạn đang được xem xét.<br/>Khi nào có kết quả chúng tôi sẽ liên lạc với bạn.<br/>Chân thành cám ơn!";
+		$user_email = "baytructuyen"; // valid POST email address 
+		$headers  = "From: $user_email\r\n";
+		$headers .= "Reply-To: $too\r\n";
+		$headers .= "Return-Path: $too\r\n";
+		$headers .= "X-Mailer: PHP/" . phpversion(). "\r\n";
+		$headers .= 'MIME-Version: 1.0' . "\n";
+		$headers .= 'Content-type: text/html; UTF-8' . "\r\n";
+		if(mail($too,$subject,$message,$headers))  
+		// //Gửi Mail local
+		// $mail = new PHPMailer();
+		// // create a new object
+		// $mail -> IsSMTP();
+		// // enable SMTP
+		// $mail -> SMTPDebug = 1;
+		// // debugging: 1 = errors and messages, 2 = messages only
+		// $mail -> SMTPAuth = true;
+		// // authentication enabled
+		// $mail -> SMTPSecure = 'ssl';
+		// // secure transfer enabled REQUIRED for GMail
+		// $mail -> Host = "smtp.gmail.com";
+		// $mail -> Port = 465;
+		// // or 587
+		// $mail -> IsHTML(true);
+		// $mail -> Username = "vietnt134@gmail.com";
+		// $mail -> Password = "whatdidyoudo1341996";
+		// $mail -> SetFrom("BayTrucTuyen@gmail.com");
+		// $mail -> Subject = "Hello Mr Bean";
+		// $mail -> Body = "Hello im from BayTrucTuyen.com <hr/>";
+		// $mail -> AddAddress($data['email']);
+		// if (!$mail -> Send()) {
+			// echo "Mailer Error: " . $mail -> ErrorInfo;//(1)
+		// } else {
+			// echo "Message has been sent";
+		// }
 		//
+		$this -> model -> send($data);
 		header('Location:' . URL . 'yeucau');
 	}
 

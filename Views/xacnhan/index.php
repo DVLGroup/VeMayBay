@@ -172,13 +172,13 @@
 					<div class="col-sm-6">
 						<div class="row">
 							<h3 class="col-sm-12 text-orange"><strong> Chi tiết giá </strong></h3>
-							<label class="col-sm-8"><?php echo Session::get('nguoiLon'); ?> X Người lớn, 
+							<label class="col-sm-8"><?php echo Session::get('nguoiLon'); ?> X Người lớn 
 							<?php
 							if (Session::get('treEm') != 0) {
-								echo Session::get('treEm') . " X Trẻ em";
+								echo " ," . Session::get('treEm') . " X Trẻ em";
 							}
 							if (Session::get('soSinh') != 0) {
-								echo " ," . Session::get('treEm') . " X Bé sơ sinh";
+								echo " ," . Session::get('soSinh') . " X Bé sơ sinh";
 							}
 							?>
 							</label>

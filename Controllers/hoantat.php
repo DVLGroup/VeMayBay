@@ -70,53 +70,73 @@ class hoantat extends Controller {
 			$body .= "<h3 style='color: Orange'>Người Liên Hệ</h3>";
 			$body .= "<h4>Họ Tên: " . Session::get('hoTen') . "</h4><h4>Điện Thoại: " . Session::get('dThoai') . "</h4>";
 			$body .= "<h4>Email: " . Session::get('email') . "</h4><h4>Địa Chỉ: " . Session::get('dChi') . ", " . Session::get('tinhThanh') . ", " . Session::get('quocGia') . "</h4>";
+
+			$body .= "<h3 style='color: Blue'>Tổng Giá Tiền</h3>";
+			$body .= "<h4>" . Session::get('nguoiLon') . " X Người Lớn</h4>";
+			if (Session::get('treEm') != 0) {
+				$body .= "<h4>" . Session::get('treEm') . " X Trẻ Em</h4>";
+			}
+			if (Session::get('soSinh') != 0) {
+				$body .= "<h4>" . Session::get('soSinh') . " X Bé Sơ Sinh</h4>";
+			}
+			$body .= "<h4 style='color: red'>Chi Tiết Giá Hành Lý</h4>";
+			if (Session::get('loaiVe') == 0) {
+				$body .= "<h4>" . Session::get('giaHanhLyDi') . " Vnđ</h4>";
+			} else {
+				$body .= "<h4>" . Session::get('giaHanhLyDi') + Session::get('giaHanhLyVe') . " Vnđ</h4>";
+			}
+			$body .= "<h4 style='color: red'>Tổng Cộng</h4>";
+			if (Session::get('loaiVe') == 0) {
+				$body .= "<h4>" . (Session::get('total') + Session::get('giaHanhLyDi')) . " Vnđ</h4>";
+			} else {
+				$body .= "<h4>" . (Session::get('total') + Session::get('giaHanhLyDi') + Session::get('giaHanhLyVe')) . " Vnđ</h4>";
+			}
 			$body .= "</div>Quý Khách vui lòng...";
 			//Gửi mail trên web
-			// $too = $data['email'];
-			// $subject = "Cảm ơn bạn đã đặt vé trên baytructuyen.com";
-			// $message = $body;
-			// $user_email = "baytructuyen";
-			// // valid POST email address
-			// $headers = "From: $user_email\r\n";
-			// $headers .= "Reply-To: $too\r\n";
-			// $headers .= "Return-Path: $too\r\n";
-			// $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
-			// $headers .= 'MIME-Version: 1.0' . "\n";
-			// $headers .= 'Content-type: text/html; UTF-8' . "\r\n";
-			// if (mail($too, $subject, $message, $headers))
-			// echo 'SENT';
-			//Gửi mail local
-			$mail = new PHPMailer(TRUE);
-			$mail -> CharSet = "UTF-8";
-			// create a new object
-			$mail -> IsSMTP();
-			// enable SMTP
-			$mail -> SMTPDebug = 1;
-			// debugging: 1 = errors and messages, 2 = messages only
-			$mail -> SMTPAuth = true;
-			// authentication enabled
-			$mail -> SMTPSecure = 'ssl';
-			// secure transfer enabled REQUIRED for GMail
-			$mail -> Host = "smtp.gmail.com";
-			$mail -> Port = 465;
-			// or 587
-			$mail -> IsHTML(true);
-			$mail -> Username = "vietnt134@gmail.com";
-			$mail -> Password = "whatdidyoudo1341996";
-			$mail -> SetFrom("baytructuyen@gmail.com");
-			$mail -> Subject = "Xác nhận thông tin đặt vé từ baytructuyen.com!";
+			$too = $data['email'];
+			$subject = "Cảm ơn bạn đã đặt vé trên baytructuyen.com";
+			$message = $body;
+			$user_email = "baytructuyen";
+			// valid POST email address
+			$headers = "From: $user_email\r\n";
+			$headers .= "Reply-To: $too\r\n";
+			$headers .= "Return-Path: $too\r\n";
+			$headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
+			$headers .= 'MIME-Version: 1.0' . "\n";
+			$headers .= 'Content-type: text/html; UTF-8' . "\r\n";
+			if (mail($too, $subject, $message, $headers))
+				// //Gửi mail local
+				// $mail = new PHPMailer(TRUE);
+				// $mail -> CharSet = "UTF-8";
+				// // create a new object
+				// $mail -> IsSMTP();
+				// // enable SMTP
+				// $mail -> SMTPDebug = 1;
+				// // debugging: 1 = errors and messages, 2 = messages only
+				// $mail -> SMTPAuth = true;
+				// // authentication enabled
+				// $mail -> SMTPSecure = 'ssl';
+				// // secure transfer enabled REQUIRED for GMail
+				// $mail -> Host = "smtp.gmail.com";
+				// $mail -> Port = 465;
+				// // or 587
+				// $mail -> IsHTML(true);
+				// $mail -> Username = "vietnt134@gmail.com";
+				// $mail -> Password = "whatdidyoudo1341996";
+				// $mail -> SetFrom("baytructuyen@gmail.com");
+				// $mail -> Subject = "Xác nhận thông tin đặt vé từ baytructuyen.com!";
+// 				
+				// $mail -> Body = $body;
+				// $mail -> AddAddress($data['email']);
+				// if (!$mail -> Send()) {
+				// echo "Mailer Error: " . $mail -> ErrorInfo;
+				// //(1)
+				// } else {
+				// echo "Message has been sent";
+				// }
+				
 
-			$mail -> Body = $body;
-			$mail -> AddAddress($data['email']);
-			if (!$mail -> Send()) {
-				echo "Mailer Error: " . $mail -> ErrorInfo;
-				//(1)
-			} else {
-				echo "Message has been sent";
-			}
-			//
-			
-			$this -> model -> insertPhieuDat($data);
+				$this -> model -> insertPhieuDat($data);
 
 			$dataDetail = array();
 			for ($i = 1; $i <= Session::get('nguoiLon'); $i++) {
