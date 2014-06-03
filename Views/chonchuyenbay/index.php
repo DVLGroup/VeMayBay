@@ -83,6 +83,8 @@
 								$i++;
 							}
 						}
+						if($minCost!=null)
+						{
 						echo "<tr>";
 						echo "<td style='display: none;'>";
 						echo $minName;
@@ -112,6 +114,7 @@
 						echo "<input type='radio' name='chooseGo' value='" . $minName ."|". $minTime1 ."|". $minTime2 ."|". $minCost ."|". $minType ."|". $minFlight ."|". $minCrypt . "' />";
 						echo "</td>";
 						echo "</tr>";
+						}
 					}
 					?>
 				</table>
@@ -169,6 +172,8 @@
 								$i++;
 							}
 						}
+						if($minCost!=null)
+						{
 						echo "<tr>";
 						echo "<td style='display: none;'>";
 						echo $minName;
@@ -198,6 +203,7 @@
 						echo "<input type='radio' name='chooseBack' value='" . $minName ."|". $minTime1 ."|". $minTime2 ."|". $minCost ."|". $minType ."|". $minFlight ."|". $minCrypt . "' />";
 						echo "</td>";
 						echo "</tr>";
+						}
 					}
 					?>
 				</table>
