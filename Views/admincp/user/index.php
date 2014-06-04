@@ -74,7 +74,8 @@
 		            <th>Họ tên</th>
 		            <th>Email</th>
 		            <th>Role</th>
-		            <th>Tools</th>
+		            <th>Sửa</th>
+		            <th>Xóa</th>
 		        </tr>
 		    </thead>
 		    <tbody id="getList_User_all">
@@ -118,11 +119,11 @@
 		    	<div class="col-md-6">
 			    	<div class="form-group">
 			    		<label for="edit_user_name">Họ tên: </label>
-			    		<input id="edit_user_name" name="edit_user_name" type="text" class="form-control" value="Trongloi"/>
+			    		<input id="edit_user_name" name="edit_user_name" type="text" class="form-control" value=""/>
 			    	</div>
 			    	<div class="form-group">
 			    		<label for="edit_user_password">Mật khẩu cũ: </label>
-			    		<input id="edit_user_password" name="edit_user_password" type="password" class="form-control"/>
+			    		<input id="edit_user_password" name="edit_user_password" type="password" class="form-control" pattern=".{3,}" required title="ít nhất 3 ký tự"/>
 			    	</div>
 			    	<div class="form-group">
 			    		<label for="edit_user_new_password">Mật khẩu mới: </label>

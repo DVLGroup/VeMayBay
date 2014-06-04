@@ -76,7 +76,8 @@
 		            <th>Hãng bay</th>
 		            <th>Giá bay</th>
 		            <th>Giá hành lý</th>
-		            <th>Tools</th>
+		            <th>Sửa</th>
+		            <th>Xóa</th>
 
 		        </tr>
 		    </thead>

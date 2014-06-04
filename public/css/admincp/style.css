@@ -5,3 +5,7 @@ body {
 .status {
 	display: none;
 }
+
+.table {
+	background-color: #fff;
+}

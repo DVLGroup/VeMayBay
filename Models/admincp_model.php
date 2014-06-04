@@ -139,7 +139,8 @@
 
 		function delete_sanBay() {
 			$id = $_POST['san_bay_code'];
-			$delete = $this->db->delete('hanh_ly', "san_bay_code = '$id'");
+			echo $id;
+			$delete = $this->db->delete('san_bay', "san_bay_code = '$id'");
 		}
 
 		function update_sanBay() {

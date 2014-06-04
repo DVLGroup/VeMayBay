@@ -63,7 +63,8 @@
 		            <th>Mã sân bay</th>
 		            <th>Tên sân bay</th>
 		            <th>Địa điểm</th>
-		            <th>Tools</th>
+		            <th>Sửa</th>
+		            <th>Xóa</th>
 		        </tr>
 		    </thead>
 		    <tbody id="getList_sanBay_all">

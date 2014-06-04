@@ -20,10 +20,8 @@
 		html_list_hanhLy += '<td>:hangBay</td>';
 		html_list_hanhLy += '<td>:giaBay</td>';
 		html_list_hanhLy += '<td>:giaHanhLy</td>';
-		html_list_hanhLy += '<td>';
-		html_list_hanhLy += '<button class="edit_hanhLy" rel=":hanhLy_id" name=":hanhLy_name" hangBay=":hangBay" giaBay=":giaBay" giaHanhLy=":giaHanhLy" data-toggle="modal" data-target="#editHanhLy_Modal"><i class="glyphicon glyphicon-wrench"></i> Sửa</button> - ';
-		html_list_hanhLy += '<a class="del_hanhLy" rel=":hanhLy_id" href="#"><i class="glyphicon glyphicon-remove"></i> Xóa</a>';
-		html_list_hanhLy += '</td>';
+		html_list_hanhLy += '<td><button class="btn btn-sm btn-default edit_hanhLy" rel=":hanhLy_id" name=":hanhLy_name" hangBay=":hangBay" giaBay=":giaBay" giaHanhLy=":giaHanhLy" data-toggle="modal" data-target="#editHanhLy_Modal"><i class="glyphicon glyphicon-wrench"></i> Sửa</button> </td> ';
+		html_list_hanhLy += '<td><a class="del_hanhLy" rel=":hanhLy_id" href="#"><i class="glyphicon glyphicon-remove"></i> Xóa</a></td>';
 		html_list_hanhLy += '</tr>';
 
 	var html_list_UserLevel = '<tr>';
@@ -64,7 +62,7 @@
 				//$('#edit_user_level_id option').removeAttr('selected'); // Remove choice
 				var id = $(this).attr('rel');
 				var hanhLy_name = $(this).attr('name');
-				var hangBay = $(this).attr('hangBay');
+				var hangBay = $(this).attr('hangbay');
 				var giaBay = $(this).attr('giaBay');
 				var giaHanhLy = $(this).attr('giaHanhLy');
 				$('#edit_hanhLy_id').val(id);
@@ -79,7 +77,7 @@
 			});
 
 			$('#table_hanhLy').dataTable( );
-
+			$('#table_hanhLy_wrapper .dataTables_length select').select2(); // initialize select2 dropdown
 		}, 'json');
 	}
 

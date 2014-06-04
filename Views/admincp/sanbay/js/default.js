@@ -5,10 +5,8 @@
 		html_list_sanBay += '<td>:sanBay_id</td>';
 		html_list_sanBay += '<td>:sanBay_name</td>';
 		html_list_sanBay += '<td>:sanBay_diaDiem</td>';
-		html_list_sanBay += '<td>';
-		html_list_sanBay += '<button class="edit_sanBay" rel=":sanBay_id" name=":sanBay_name" diaDiem=":sanBay_diaDiem" data-toggle="modal" data-target="#editSanBay_Modal"><i class="glyphicon glyphicon-wrench"></i> Sửa</button> - ';
-		html_list_sanBay += '<a class="del_sanBay" rel=":sanBay_id" href="#"><i class="glyphicon glyphicon-remove"></i> Xóa</a>';
-		html_list_sanBay += '</td>';
+		html_list_sanBay += '<td><button class="btn btn-sm btn-default edit_sanBay" rel=":sanBay_id" name=":sanBay_name" diaDiem=":sanBay_diaDiem" data-toggle="modal" data-target="#editSanBay_Modal"><i class="glyphicon glyphicon-wrench"></i> Sửa</button></td>';
+		html_list_sanBay += '<td><a class="del_sanBay" rel=":sanBay_id" href="#"><i class="glyphicon glyphicon-remove"></i> Xóa</a></td>';
 		html_list_sanBay += '</tr>';
 
 	//
@@ -29,7 +27,7 @@
 				var delItem = $(this);
 				var id = $(this).attr('rel');
 				$.post('sanbay/xhrDelete', {'san_bay_code':id}, function(rs){
-					//console.log(rs);
+					console.log(rs);
 					delItem.parent().parent().remove();
 				});
 				return false;

@@ -19,10 +19,8 @@
 		html_list_User += '<td>:user_hoten</td>';
 		html_list_User += '<td class="user_email">:user_email</td>';
 		html_list_User += '<td>:user_level_name</td>';
-		html_list_User += '<td>';
-		html_list_User += '<button class="edit" rel=":user_id" email=":user_email" level=":user_level_id" data-toggle="modal" data-target="#editUser_Modal"><i class="glyphicon glyphicon-wrench"></i> Sửa</button> - ';
-		html_list_User += '<a class="del_user" rel=":user_id" href="#"><i class="glyphicon glyphicon-remove"></i> Xóa</a>';
-		html_list_User += '</td>';
+		html_list_User += '<td><button class="edit btn btn-sm btn-default" rel=":user_id" email=":user_email" level=":user_level_id" data-toggle="modal" data-target="#editUser_Modal"><i class="glyphicon glyphicon-wrench"></i> Sửa</button> </td>';
+		html_list_User += '<td><a class="del_user" rel=":user_id" href="#"><i class="glyphicon glyphicon-remove"></i> Xóa</a> </td>';
 		html_list_User += '</tr>';
 
 	var html_list_UserLevel = '<tr>';
@@ -104,13 +102,11 @@
 				var level = $(this).attr('level');
 				$('#edit_user_id').val(id);
 				$('#edit_user_email').val(email);
-				// $('.edit_user_level_option').find('option[value="2"]', function(){
-				// 	$(this).attr('selected','selected');
-				// })
-				$('#edit_user_level_id option[value="' + level + '"]').attr('selected', 'selected');
+				$('#edit_user_level_id').val(level);
 			});
 
 			$('#table_user').dataTable( );
+	        $('#table_user_wrapper .dataTables_length select').select2(); // initialize select2 dropdown
 
 		}, 'json');
 	}

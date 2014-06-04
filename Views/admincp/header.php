@@ -14,28 +14,48 @@
         <meta name="viewport" content="width=device-width; initial-scale=1.0" />
 
         <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-        <link rel="shortcut icon" href="../img/ico/Cat-Brown-icon-24px.png" />
+        <link rel="shortcut icon" href="" />
         <link rel="apple-touch-icon" href="../img/ico/Cat-Brown-icon-72px.png" />
 
         <!-- Chèn link CSS -->
+        <link rel="stylesheet" href="<?php echo URL ?>public/css/fontawesome/css/font-awesome.css" />
+
         <link rel="stylesheet" href="<?php echo URL ?>public/css/bootstrap.min.css" type="text/css"  />
-        <link rel="stylesheet" href="<?php echo URL ?>public/css/admincp/jquery.Tables.css"/>
+
+        <link rel="stylesheet" href="<?php echo URL ?>public/plugins/select2/select2.css" type="text/css"  />
+        <link rel="stylesheet" href="<?php echo URL ?>public/plugins/select2/select2-metronic.css" type="text/css"  />
+
+        <link rel="stylesheet" href="<?php echo URL ?>public/plugins/data-tables/DT_bootstrap.css" type="text/css"  />
+
+        <link rel="stylesheet" href="<?php echo URL ?>public/css/style-metronic.css"/>
+        <link rel="stylesheet" href="<?php echo URL ?>public/css/plugins.css"/>
+
         <link rel="stylesheet" href="<?php echo URL ?>public/css/admincp/style.css"/>
         <link rel="stylesheet" href="<?php echo URL ?>public/css/admincp/customize-bootstrap.css"/>
 
-        <!-- Chèn link JavaScript-->
-        <script src="<?php echo URL ?>public/js/jquery.min.js" type="text/javascript"></script>
-        <script src="<?php echo URL ?>public/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="<?php echo URL ?>public/js/jquery.validate.min.js" type="text/javascript" ></script>
-        <script src="<?php echo URL ?>public/js/admincp/jquery.dataTables.js" type="text/javascript"></script>
-        
         <?php
             if(isset($this->style)){
                 foreach ($this->style as $style) {
                     echo '<link rel="stylesheet" type="text/css" href="'. $style .'" />';
                 }
             }
-            
+        ?>
+
+        <!-- Chèn link JavaScript-->
+        <script src="<?php echo URL ?>public/js/jquery.min.js" type="text/javascript"></script>
+
+        <script src="<?php echo URL ?>public/js/bootstrap.min.js" type="text/javascript"></script>
+
+        <script src="<?php echo URL ?>public/js/jquery.validate.min.js" type="text/javascript" ></script>
+
+        <script src="<?php echo URL ?>public/plugins/select2/select2.min.js" type="text/javascript" ></script>
+
+        <script src="<?php echo URL ?>public/plugins/data-tables/jquery.dataTables.js" type="text/javascript"></script>
+        <script src="<?php echo URL ?>public/plugins/data-tables/DT_bootstrap.js" type="text/javascript" ></script>
+
+        <script src="<?php echo URL ?>public/js/admincp/core/app.js" type="text/javascript"></script>
+        
+        <?php
             if(isset($this->script)){
                 foreach ($this->script as $script) {
                     echo '<script type="text/javascript" src="'. $script .'" ></script>';

@@ -44,7 +44,30 @@ class Admincp extends Controller {
 
 	function datve( $xhr = false ) {
 		Auth::handleLogin();
-		$this->view->render_admin('datve/index');
+		$this->view->script = array(
+			URL . 'Views/admincp/datve/js/default.js'
+			,URL . 'public/js/admincp/custom/table-advanced.js'
+		);
+
+		$this->view->style = array(
+			// style
+		);
+
+		if($xhr == 'xhrGetListings'){
+			$this->model->getList_datVe();
+		}
+		elseif($xhr == 'xhrInsert'){
+			$this->model->insert_datVe();
+		}
+		elseif($xhr == 'xhrUpdate'){
+			$this->model->update_datVe();
+		}
+		elseif($xhr == 'xhrDelete'){
+			$this->model->delete_datVe();
+		}
+		else {
+			$this->view->render_admin('datve/index');
+		}
 	}
 
 	function hanhly( $xhr = false ) {
