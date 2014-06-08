@@ -18,6 +18,16 @@ $(document).on('click', '#submitYC', function(e) {
 });
 
 $(document).ready(function() {
+	$("#oriYC option[value='HAN']").css('display','none');
+	$("#desYC option[value='SGN']").css('display','none');
+	$("#oriYC").change(function(e) {
+		index = $(this).prop("selectedIndex");
+		$("#desYC option:eq(" + index + ")").css('display', 'none').siblings().css('display', 'block');
+	});
+	$("#desYC").change(function(e) {
+		index = $(this).prop("selectedIndex");
+		$("#oriYC option:eq(" + index + ")").css('display', 'none').siblings().css('display', 'block');
+	});
 	$("#submitYC").click(function(e) {
 		if ($("#ngayDi2").val() > $("#ngayVe1").val()) {
 			$("#ngayVe1,#ngayDi2").addClass("alert-danger");

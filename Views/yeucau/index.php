@@ -49,8 +49,13 @@
 			<div class="form-group">
 				<label class="col-sm-2 control-label">Bay đi</label>
 				<div class="col-sm-3">
-					<select name="ori" class="form-control">
-						<option value="HoChiMinh">Hồ Chí Minh</option>
+					<select id="oriYC" name="ori" class="form-control">
+						<option value="HAN">Hà Nội</option>
+						<option value="SGN" selected="selected">Hồ Chí Minh</option>
+						<option value="BMV">Ban Mê Thuộc</option>
+						<option value="CAH">Cà Mau</option>
+						<option value="CXR">Nha Trang</option>
+						<option value="DAD">Đà Nẵng</option>
 					</select>
 				</div>
 				<div class="col-sm-3">
@@ -64,8 +69,13 @@
 			<div class="form-group">
 				<label class="col-sm-2 control-label">Bay về</label>
 				<div class="col-sm-3">
-					<select name="des" class="form-control">
-						<option value="HaNoi">Hà Nội</option>
+					<select id="desYC" name="des" class="form-control">
+						<option value="HAN" selected="selected">Hà Nội</option>
+						<option value="SGN">Hồ Chí Minh</option>
+						<option value="BMV">Ban Mê Thuộc</option>
+						<option value="CAH">Cà Mau</option>
+						<option value="CXR">Nha Trang</option>
+						<option value="DAD">Đà Nẵng</option>
 					</select>
 				</div>
 				<div class="col-sm-3">
