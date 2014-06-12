@@ -4,6 +4,34 @@
 <input type="hidden" value="<?php echo Session::get('treEm'); ?>" id="treEm" name="treEm"/>
 <input type="hidden" value="<?php echo Session::get('soSinh'); ?>" id="soSinh" name="soSinh"/>
 <input type="hidden" value="<?php echo Session::get('loaiVe'); ?>" id="loaiVe" name="loaiVe"/>
+<style>
+	#btnAffix{
+		position: fixed;
+		bottom: 50px;
+		right: 0px;
+		z-index: 10000;
+		width: 100%;
+	}
+</style>
+<div id="btnAffix">
+	<?php if(Session::get('loaiVe') == 1)
+	{
+	?>
+		<button class="btn btn-lg btn-info btn-block" id="submitCart3">
+			<i class="fa fa-search"></i>
+			Tiếp tục
+		</button>
+	<?php
+	}else{
+	?>
+		<button class="btn btn-lg btn-info btn-block" id="submitCart4">
+			<i class="fa fa-search"></i>
+			Tiếp tục
+		</button>
+	<?php
+	}
+	?>
+</div>
 <div class="row">
 	<!-- Step by steps -->
 	<div class="col-sm-12 well">

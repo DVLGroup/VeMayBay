@@ -1,3 +1,12 @@
+<style>
+	#btnAffix{
+		position: fixed;
+		bottom: 50px;
+		right: 0px;
+		z-index: 10000;
+		width: 100%;
+	}
+</style>
 <div class="row">
 	<!-- Step by steps -->
 	<div class="col-sm-12 well">
@@ -196,12 +205,12 @@
 								<p class="col-sm-4 text-success"><strong><?php echo Session::get('total') + Session::get('giaHanhLyDi') + Session::get('giaHanhLyVe') . " Vnđ"; ?></strong></p>
 							<?php } ?>
 						</div>
-						<hr class="alert-info" />
-						<br />
+						<!-- <hr class="alert-info" />
+						<br /> -->
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-12">
+			<div id="btnAffix">
 				<a href="<?php echo URL; ?>hoantat/hoantat" class="btn btn-lg btn-block btn-info"><i class="fa fa-search"></i>Tiếp tục</a>
 			</div>
 		</div>

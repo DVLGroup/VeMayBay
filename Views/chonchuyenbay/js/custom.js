@@ -75,7 +75,7 @@ $(document).ready(function() {
 		$("#tongCong").text(tongCong + parseInt($("#tong1").text()));
 		$("#total").val(tongCong + parseInt($("#tong1").text()));
 	});
-	$("#submitCart1").click(function(e) {
+	$("#submitCart1,#submitCart3").click(function(e) {
 		var submitOK = 0;
 		if (loaiVe == 1) {
 			if ($("input[name='chooseGo']:checked").val() && $("input[name='chooseBack']:checked").val()) {
@@ -96,7 +96,7 @@ $(document).ready(function() {
 		}
 
 	});
-	$("#submitCart2").click(function(e) {
+	$("#submitCart2,#submitCart4").click(function(e) {
 		var submitOK = 0;
 		if (loaiVe == 1) {
 			if ($("input[name='chooseGo']:checked").val() && $("input[name='chooseBack']:checked").val()) {

@@ -5,6 +5,15 @@
 		});
 	});
 </script>
+<style>
+	#btnAffix{
+		position: fixed;
+		bottom: 50px;
+		right: 0px;
+		z-index: 10000;
+		width: 100%;
+	}
+</style>
 <div class="row">
 	<!-- Step by steps -->
 	<div class="col-sm-12 well">
@@ -316,7 +325,7 @@
 						<p><strong>VNA giao vé tận nơi trong phạm vi TP.HCM</strong></p>
 						<p>Khách hàng sẽ đóng thêm một khoản phí vận chuyển 30.000 Đồng (tùy theo lộ trình xa gần).</p>
 					</div>
-					<div class="col-sm-12">
+					<div id="btnAffix">
 						<button type="submit" class="btn btn-lg btn-block btn-info">
 							<i class="fa fa-search"></i>
 							Tiếp tục
