@@ -69,6 +69,10 @@ class Admincp extends Controller {
 			$this->view->render_admin('datve/index');
 		}
 	}
+	
+	function get_ct_dat_ve( $dat_ve_id ) {
+		$this->model->getList_ct_datVe($dat_ve_id);
+	}
 
 	function hanhly( $xhr = false ) {
 		Auth::handleLogin();
@@ -183,5 +187,11 @@ class Admincp extends Controller {
 
 	function logout() {
 		$this->model->logout();
+	}
+
+	public function get_money($number) {
+		// VietNam national format with 2 decimals`
+		setlocale(LC_MONETARY, 'vi_VN');
+		return money_format('%.2n', $number) . "đ";
 	}
 }

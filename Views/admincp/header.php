@@ -62,6 +62,8 @@
                 }
             }
         ?>
+
+        
     </head>
 
     <body>
@@ -79,12 +81,12 @@
                             <i class="glyphicon glyphicon-home"></i> Bay Online
                         </a>
                     </div>
-                    <nav class="collapse navbar-collapse">
+                    <nav id="nav-admincp" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
                             <li>
                                 <a href="<?php echo URL ?>admincp/vemaybay">Vé máy bay</a>
                             </li>
-                            <li >
+                            <li>
                                 <a href="<?php echo URL ?>admincp/datve">Đặt vé</a>
                             </li>
                             <li >
@@ -93,9 +95,9 @@
                             <li >
                                 <a href="<?php echo URL ?>admincp/sanbay">Sân bay</a>
                             </li>
-                            <li >
+                            <!-- <li >
                                 <a href="<?php echo URL ?>admincp/thanhtoan">Thanh toán</a>
-                            </li>
+                            </li> -->
                             <li >
                                 <a href="<?php echo URL ?>admincp/yeucau">Yêu Cầu</a>
                             </li>

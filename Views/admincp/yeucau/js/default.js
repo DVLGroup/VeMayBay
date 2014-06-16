@@ -17,7 +17,7 @@
         sOut += '<tr><td>Email:</td><td>:yeucau_email</td></tr>';
         sOut += '<tr><td>Số điện thoại:</td><td>:yeucau_sdt</td></tr>';
         sOut += '<tr><td>Số vé:</td><td>:yeucau_soluong</td></tr>';
-        sOut += '<tr><td>Hạng vé:</td><td>:yeucau_hangbay</td></tr>';
+        sOut += '<tr><td>Hãng bay:</td><td>:yeucau_hangbay</td></tr>';
         sOut += '</table>';
         sOut += '<table class="pull-left">';
         sOut += '<tr><td>Điểm đi:</td><td>:yeucau_diemdi</td></tr>';
@@ -28,38 +28,36 @@
         sOut += '</table>';
 
 	//
+
+
 	function getList_yeuCau() {
 		jQuery.get('yeucau/xhrGetListings', function(rs){
-			console.log(rs);
-			var result;
 			
-			for (var j = 0; j < rs.length; j++) {
-				result = html_list_yeuCau.replace(/:yeucau_id/g, rs[j].yeu_cau_id);
-				result = result.replace(':yeucau_hoten', rs[j].ho_ten);
-				result = result.replace(':yeucau_diemdi', rs[j].dia_diem_di);
-				result = result.replace(':yeucau_diemden', rs[j].dia_diem_den);
-				result = result.replace(':yeucau_soluong', rs[j].so_luong);
-				result = result.replace(':yeucau_ngaydi', rs[j].ngay_di);
-				result = result.replace(':yeucau_ngayve', rs[j].ngay_ve);
+			var result;
+			var sOut_2 = new Array();
+			for (var i = 0; i < rs.length; i++) {
+				result = html_list_yeuCau.replace(/:yeucau_id/g, rs[i].yeu_cau_id);
+				result = result.replace(':yeucau_hoten', rs[i].ho_ten);
+				result = result.replace(':yeucau_diemdi', rs[i].dia_diem_di);
+				result = result.replace(':yeucau_diemden', rs[i].dia_diem_den);
+				result = result.replace(':yeucau_soluong', rs[i].so_luong);
+				result = result.replace(':yeucau_ngaydi', rs[i].ngay_di);
+				result = result.replace(':yeucau_ngayve', rs[i].ngay_ve);
 				$('#getList_yeuCau_all').append(result);
 
-				sOut = sOut.replace(':yeucau_id', rs[j].yeu_cau_id);
-				sOut = sOut.replace(':yeucau_hoten', rs[j].ho_ten);
-				sOut = sOut.replace(':yeucau_email', rs[j].email);
-				sOut = sOut.replace(':yeucau_sdt', rs[j].so_dt);
-				sOut = sOut.replace(':yeucau_diemdi', rs[j].dia_diem_di);
-				sOut = sOut.replace(':yeucau_diemden', rs[j].dia_diem_den);
-				sOut = sOut.replace(':yeucau_soluong', rs[j].so_luong);
-				sOut = sOut.replace(':yeucau_hangbay', rs[j].hang_bay);
-				sOut = sOut.replace(':yeucau_ngaydi', rs[j].ngay_di);
-				sOut = sOut.replace(':yeucau_ngayve', rs[j].ngay_ve);
-				sOut = sOut.replace(':yeucau_guiquaemail', rs[j].gui_qua_mail == 1 ? 'Có' : 'Không');
-			}
+				sOut_2[i+1] = sOut.replace(':yeucau_id', rs[i].yeu_cau_id);
+				sOut_2[i+1] = sOut_2[i+1].replace(':yeucau_hoten', rs[i].ho_ten);
+				sOut_2[i+1] = sOut_2[i+1].replace(':yeucau_email', rs[i].email);
+				sOut_2[i+1] = sOut_2[i+1].replace(':yeucau_sdt', rs[i].so_dt);
+				sOut_2[i+1] = sOut_2[i+1].replace(':yeucau_diemdi', rs[i].dia_diem_di);
+				sOut_2[i+1] = sOut_2[i+1].replace(':yeucau_diemden', rs[i].dia_diem_den);
+				sOut_2[i+1] = sOut_2[i+1].replace(':yeucau_soluong', rs[i].so_luong);
+				sOut_2[i+1] = sOut_2[i+1].replace(':yeucau_hangbay', rs[i].hang_bay);
+				sOut_2[i+1] = sOut_2[i+1].replace(':yeucau_ngaydi', rs[i].ngay_di);
+				sOut_2[i+1] = sOut_2[i+1].replace(':yeucau_ngayve', rs[i].ngay_ve);
+				sOut_2[i+1] = sOut_2[i+1].replace(':yeucau_guiquaemail', rs[i].gui_qua_mail == 1 ? 'Có' : 'Không');
+			}	
 
-
-			/*
-	         * Insert a 'details' column to the table
-	         */
 	        var nCloneTh = document.createElement( 'th' );
 	        var nCloneTd = document.createElement( 'td' );
 	        nCloneTd.innerHTML = '<span class="row-details row-details-close"></span>';
@@ -71,44 +69,25 @@
 	        $('#table_yeucau tbody tr').each( function () {
 	            this.insertBefore(  nCloneTd.cloneNode( true ), this.childNodes[0] );
 	        } );
-	         
-	        /*
-	         * Initialize DataTables, with no sorting on the 'details' column
-	         */
-	        var oTable = $('#table_yeucau').dataTable( {
-	            "aoColumnDefs": [
-	                {"bSortable": false, "aTargets": [ 0 ] }
-	            ],
-	            "aaSorting": [[1, 'asc']],
-	             "aLengthMenu": [
-	                [5, 15, 20, -1],
-	                [5, 15, 20, "All"] // change per page values here
-	            ],
-	            // set the initial value
-	            "iDisplayLength": 10,
-	        });
-
-	        jQuery('#table_yeucau_wrapper .dataTables_length select').select2(); // initialize select2 dropdown
-	         
-	        /* Add event listener for opening and closing details
-	         * Note that the indicator for showing which row is open is not controlled by DataTables,
-	         * rather it is done here
-	         */
+	        
 	        $('#table_yeucau').on('click', ' tbody td .row-details', function () {
 	            var nTr = $(this).parents('tr')[0];
+	            var aData = oTable.fnGetData( nTr );
+				var ID = aData[1];
+				// console.log(ID);
 	            if ( oTable.fnIsOpen(nTr) )
 	            {
-	                /* This row is already open - close it */
 	                $(this).addClass("row-details-close").removeClass("row-details-open");
 	                oTable.fnClose( nTr );
 	            }
 	            else
-	            {
-	                /* Open this row */                
+	            {          
 	                $(this).addClass("row-details-open").removeClass("row-details-close");
-	                oTable.fnOpen( nTr, sOut, 'details' );
+	                oTable.fnOpen( nTr, sOut_2[ID], 'details' );
 	            }
 	        });
+
+	        var oTable = $('#table_yeucau').dataTable();
 
 		}, 'json');
 	}
