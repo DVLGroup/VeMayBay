@@ -42,7 +42,7 @@
         sOut_construct += '<th>Hành lý</th>';
         sOut_construct += '<th>Giờ bay</th>';
         sOut_construct += '<th>Hãng bay</th>';
-        sOut_construct += '<th>Giá vé</th>';
+
         //sOut_construct += '<th>Crypt</th>';
         sOut_construct += '</tr>';
         sOut_construct += '</thead>';
@@ -60,7 +60,7 @@
         table_ctv_construct += '<td>:ct_datve_giahanhly</td>';
         table_ctv_construct += '<td>:ct_datve_giobay</td>';
         table_ctv_construct += '<td>:ct_datve_hangbay</td>';
-        table_ctv_construct += '<td>:ct_datve_giave</td>';
+
         // table_ctv_construct += '<td>:ct_datve_crypt</td>';
         table_ctv_construct += '</tr>';
 
