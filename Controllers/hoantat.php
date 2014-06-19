@@ -49,10 +49,12 @@ class hoantat extends Controller {
 			</h3>
 			<h4 style='color: red'>Chiều đi</h4>
 			<h4>" . Session::get('oriName') . "->" . Session::get('desName') . "<h4> 
-			<h4>Ngày: " . Session::get('dateGo') . "</h4>";
+			<h4>Ngày: " . Session::get('dateGo') . "</h4>
+			<h4>Chuyến Bay: " . Session::get('codeFlight1') . "</h4>";
 			if (Session::get('loaiVe') == 1) {
 				$body .= "<h4 style='color: red'>Chiều về</h4><h4>" . Session::get('desName') . "->" . Session::get('oriName') . "<h4> 
-				<h4>Ngày: " . Session::get('dateBack') . "</h4>";
+				<h4>Ngày: " . Session::get('dateBack') . "</h4>
+				<h4>Chuyến Bay: " . Session::get('codeFlight2') . "</h4>";
 			}
 			$body .= "<h3 style='color: gray'>Hành Khách</h3>";
 			for ($i = 1; $i <= Session::get('nguoiLon'); $i++) {
@@ -149,6 +151,7 @@ class hoantat extends Controller {
 				$dataDetail['hang_bay'] = Session::get('aName');
 				$dataDetail['dat_ve_id'] = Session::get('datVeId');
 				$dataDetail['crypt'] = Session::get('crypt1');
+				$dataDetail['chuyen_bay'] = Session::get('codeFlight1');
 				$this -> model -> insertCTPhieuDat($dataDetail);
 			}
 			for ($i = 1; $i <= Session::get('treEm'); $i++) {
@@ -161,6 +164,7 @@ class hoantat extends Controller {
 				$dataDetail['hang_bay'] = Session::get('aName');
 				$dataDetail['dat_ve_id'] = Session::get('datVeId');
 				$dataDetail['crypt'] = Session::get('crypt1');
+				$dataDetail['chuyen_bay'] = Session::get('codeFlight1');
 				$this -> model -> insertCTPhieuDat($dataDetail);
 			}
 			for ($i = 1; $i <= Session::get('soSinh'); $i++) {
@@ -173,6 +177,7 @@ class hoantat extends Controller {
 				$dataDetail['hang_bay'] = Session::get('aName');
 				$dataDetail['dat_ve_id'] = Session::get('datVeId');
 				$dataDetail['crypt'] = Session::get('crypt1');
+				$dataDetail['chuyen_bay'] = Session::get('codeFlight1');
 				$this -> model -> insertCTPhieuDat($dataDetail);
 			}
 			if (Session::get('loaiVe') == 1) {
@@ -186,6 +191,7 @@ class hoantat extends Controller {
 					$dataDetail['hang_bay'] = Session::get('bName');
 					$dataDetail['dat_ve_id'] = Session::get('datVeId');
 					$dataDetail['crypt'] = Session::get('crypt2');
+					$dataDetail['chuyen_bay'] = Session::get('codeFlight2');
 					$this -> model -> insertCTPhieuDat($dataDetail);
 				}
 				for ($i = 1; $i <= Session::get('treEm'); $i++) {
@@ -198,6 +204,7 @@ class hoantat extends Controller {
 					$dataDetail['hang_bay'] = Session::get('bName');
 					$dataDetail['dat_ve_id'] = Session::get('datVeId');
 					$dataDetail['crypt'] = Session::get('crypt2');
+					$dataDetail['chuyen_bay'] = Session::get('codeFlight2');
 					$this -> model -> insertCTPhieuDat($dataDetail);
 				}
 				for ($i = 1; $i <= Session::get('soSinh'); $i++) {
@@ -210,6 +217,7 @@ class hoantat extends Controller {
 					$dataDetail['hang_bay'] = Session::get('bName');
 					$dataDetail['dat_ve_id'] = Session::get('datVeId');
 					$dataDetail['crypt'] = Session::get('crypt2');
+					$dataDetail['chuyen_bay'] = Session::get('codeFlight2');
 					$this -> model -> insertCTPhieuDat($dataDetail);
 				}
 
