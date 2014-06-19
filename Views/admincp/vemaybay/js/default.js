@@ -38,7 +38,7 @@ $(document).ready(function(){
 		$('#getList_veMayBay_all').html('');
 		
 		$.ajax({
-			url : "http://localhost/VeMayBay/chonchuyenbay/proxy",
+			url : "//localhost/VeMayBay/chonchuyenbay/proxy",
 			data : data,
 			type : "POST",
 			success : function(data, textStatus, jqXHR) {

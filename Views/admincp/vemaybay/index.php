@@ -18,7 +18,7 @@
 					</select>
 				</div>
 				<div class="col-md-4">
-					<div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="mm/dd/yyyy">
+					<div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="dd/mm/yyyy">
 						<input class="form-control" name="_time1" type="text" placeHolder="Từ ngày" required>
 						<span class="input-group-addon">
 							 <i class="glyphicon glyphicon-arrow-right"></i>
