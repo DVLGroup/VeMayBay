@@ -60,6 +60,7 @@
 					FROM dat_ve, ct_dat_ve, thanh_toan, hanh_ly
 					WHERE dat_ve.dat_ve_id = ct_dat_ve.dat_ve_id
 					AND dat_ve.thanh_toan_id = thanh_toan.thanh_toan_id
+					AND hanh_ly.hanh_ly_id = ct_dat_ve.hanh_ly_id
 					GROUP BY dat_ve.dat_ve_id";
 			$result = $this->db->select($query);
 			echo json_encode($result);
