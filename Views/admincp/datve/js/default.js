@@ -42,6 +42,7 @@
         sOut_construct += '<th>Hành lý</th>';
         sOut_construct += '<th>Giờ bay</th>';
         sOut_construct += '<th>Hãng bay</th>';
+        sOut_construct += '<th>Chuyến Bay</th>';
 
         //sOut_construct += '<th>Crypt</th>';
         sOut_construct += '</tr>';
@@ -60,6 +61,7 @@
         table_ctv_construct += '<td>:ct_datve_giahanhly</td>';
         table_ctv_construct += '<td>:ct_datve_giobay</td>';
         table_ctv_construct += '<td>:ct_datve_hangbay</td>';
+        table_ctv_construct += '<td>:ct_datve_chuyenbay</td>';
 
         // table_ctv_construct += '<td>:ct_datve_crypt</td>';
         table_ctv_construct += '</tr>';
@@ -100,6 +102,7 @@
 					table_ctv = table_ctv.replace(':ct_datve_giobay', rs[i].gio_bay);
 					table_ctv = table_ctv.replace(':ct_datve_hangbay', rs[i].hang_bay);
 					table_ctv = table_ctv.replace(':ct_datve_giave', rs[i].gia_bay);
+					table_ctv = table_ctv.replace(':ct_datve_chuyenbay', rs[i].chuyen_bay);
 					// table_ctv = table_ctv.replace(':ct_datve_crypt', rs[i].crypt);
 					
 				}
