@@ -42,8 +42,9 @@ class hoantat extends Controller {
 			$data['quoc_gia'] = Session::get('quocGia');
 			$data['thanh_toan_id'] = Session::get('chuyenKhoan');
 			//body email
-			$body = "Cám ơn Quý Khách đã đặt vé của baytructuyen.com 
-			<div align='center' style='border: 1px solid black;'>
+			$body = "<h5>Cám ơn Quý Khách đã đặt vé của baytructuyen.com</h5> 
+			<h5>Mã đặt vé: <b style='color: red;'>".Session::get('datVeId')."</b> Quý khách vui lòng nhớ mã đặt vé để tiện việc xác nhận.</h5>
+			<div  align='center' style='border: 1px dashed gray;background-color:aliceblue'>
 			<h3 style='color: #300000'>
 				<strong> Thông tin hành trình </strong>
 			</h3>
@@ -93,7 +94,26 @@ class hoantat extends Controller {
 			} else {
 				$body .= "<h4>" . (Session::get('total') + Session::get('giaHanhLyDi') + Session::get('giaHanhLyVe')) . " Vnđ</h4>";
 			}
-			$body .= "</div>Quý Khách vui lòng...";
+			$body .= "</div><h5>Quý Khách vui lòng thanh toán bằng 3 hình thức sau:</h5>
+					<div>
+						<p><strong>1) Ngân hàng TMCP Ngoại thương Việt Nam</strong></p>
+						<h5>Tên tài khoản: Công ty CP Đầu Tư – VNA</h5>
+						<h5>Số tài khoản: 0071 00077 6789</h5>
+						<h5>Chi nhánh: TP.HCM</h5>
+					</div>
+					
+					<div>
+						<p><strong>2) Văn phòng Công ty CP Đầu Tư – VNA</strong></p>
+						<h5>Địa chỉ: 23/9 Phan Đăng Lưu, Phường 3, Q.BT, TP. HCM.</h5>
+						<h5>Điện thoại: (08) 7301 5888.</h5>
+						<h5>Di động: 0909 68 3438.</h5>
+					</div>
+					
+					<div>
+						<p><strong>3) VNA giao vé tận nơi trong phạm vi TP.HCM</strong></h5>
+						<h5>Khách hàng sẽ đóng thêm một khoản phí vận chuyển 30.000 Đồng (tùy theo lộ trình xa gần).</h5>
+					</div>
+					<div><h5>Quý khách đã chọn hình thức thanh toán số: <b style='color: red;'>".Session::get('chuyenKhoan').")</b></h5></div>";
 			//Gửi mail trên web
 			$too = $data['email'];
 			$subject = "Cảm ơn bạn đã đặt vé trên baytructuyen.com";
